@@ -1,6 +1,7 @@
 import React from "react";
 import "./AppMain.css";
 import mainlogo from "./image/jhsystem.png";
+import aboutphoto from "./image/photo1.png";
 
 export default function AppMain() {
   return (
@@ -38,11 +39,7 @@ function About() {
   return (
     <div className="aboutWrap">
       <div className="left">
-        <img
-          className="aboutImage"
-          src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-          alt="로고"
-        />
+        <img className="aboutImage" src={aboutphoto} alt="로고" />
       </div>
       <div className="right">
         <p className="title">ABOUT US</p>
