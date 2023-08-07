@@ -1,9 +1,18 @@
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+
 * {
+  margin: 0;
+  padding: 0;
+  list-style: none;
   text-decoration: none;
+  font-family: Roboto;
+  font-family: "Spoqa Han Sans Neo", "sans-serif";
+  /* 패딩의 크기 증가 현상 없애기 */
+  box-sizing: border-box;
 }
 
 .top {
-  height: 470px;
+  height: 460px;
   background-image: url("./image/photo2.jpg");
   background-size: cover;
   background-position: center;
@@ -12,75 +21,240 @@
 header {
   width: 100%;
   height: 70px;
+  padding: 0 70px;
+}
+header:hover {
+  background-color: rgb(255, 255, 255);
+}
+header:hover .navlist > li > a {
+  color: black;
+}
+
+.headerwrap {
+  height: 100%;
+  width: 1120px;
+  min-width: 600px;
+  margin: 0 auto;
   /* 수직중앙 정렬 */
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-header:hover {
-  background-color: rgb(255, 255, 255);
-}
-header:hover .navmenu {
-  color: black;
-}
 
 .logo {
-  background-color: white;
   height: 60px;
-  margin-left: 150px;
 }
 
-.nav {
-  margin-right: 150px;
+nav {
+  height: 60px;
+  line-height: 60px;
 }
 
-.navmenu {
+.navlist > li {
+  display: inline-block;
+  margin: 0 30px;
+}
+
+.navlist > li:first-child {
+  margin: 0 30px 0 0;
+}
+
+.navlist > li:last-child {
+  margin: 0 0 0 30px;
+}
+
+.navlist > li > a {
   color: white;
   font-weight: 700;
   font-size: large;
-  margin: 0 25px;
 }
 
 /* main */
 main {
-  width: 80%;
-  height: auto;
-  min-height: 1080px;
-  margin: 0 auto;
+  width: 100%;
+  min-height: 800px;
   background-color: white;
 }
 
 /* ABOUT */
 .aboutWrap {
   width: 100%;
-  margin: 100px auto 0;
-  /* display: flex;
-  justify-content: center; */
 }
 
-.info {
-  font-family: Roboto;
-  margin: 0 30px;
+.contBox-1 {
+  width: 100%;
+  padding: 160px 0;
+  box-sizing: border-box;
 }
 
-.subtitle {
-  font-size: 20px;
+.contBox-1-wrap {
+  width: 1120px;
+  margin: 0 auto;
+}
+
+.category {
+  font-size: 18px;
   font-weight: 600;
-  color: black;
+  text-align: left;
+  color: rgb(42, 60, 86);
 }
 
 .title {
-  font-size: 50px;
-  font-weight: 800;
+  font-size: 60px;
+  font-weight: 900;
 }
 
-.content {
+.contBox-1-content {
+  width: 750px;
+  font-size: 20px;
+  line-height: 150%;
+}
+
+.contBox-2 {
+  width: 100%;
+  padding: 120px 0;
+  box-sizing: border-box;
+  background-color: rgb(235, 235, 235);
+}
+
+.contBox-2-wrap {
+  width: 1120px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.contBox-2-img {
+  width: 50%;
+}
+
+.contBox-2-text {
+  width: 50%;
+  text-align: center;
+}
+
+.title2 {
+  font-size: 50px;
+  font-weight: 900;
+}
+
+.contBox-2-content {
+  width: 90%;
+  margin: 0 auto;
+  text-align: left;
+  font-size: 20px;
+  line-height: 150%;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+.contPhoto {
+  width: 500px;
+  height: 400px;
+}
+
+/* contact */
+.contactWrap {
+  width: 100%;
+}
+
+.contactbox {
+  width: 1120px;
+  margin: 0 auto;
+  padding: 160px 0;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.snsbox {
+  height: 300px;
+  width: 1120px;
+  margin: 0 auto;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid rgb(218, 218, 218);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+}
+.snsbox > ul {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.snsbox > ul > li > img {
+  width: 130px;
+}
+
+.askbox-list {
+  width: 100%;
+}
+.askbox-list-child {
+  width: 100%;
+  margin: 40px 0;
+  display: flex;
+  justify-content: space-between;
+}
+.askbox-list-child > span {
   font-size: 20px;
   font-weight: 600;
+  color: rgb(83, 83, 83);
+}
+.askbox-list-child > input {
+  width: 900px;
+  height: 35px;
+}
+
+.user {
+  display: flex;
+}
+.user-child {
+  width: 530px;
+  display: flex;
+  justify-content: space-between;
+}
+.user-child > span {
+  font-size: 20px;
+  font-weight: 600;
+  color: rgb(83, 83, 83);
+}
+.user-child > input {
+  width: 400px;
+  height: 35px;
+}
+
+#askcontent {
+  height: 200px;
 }
 
 /* footer */
 footer {
-  height: 500px;
-  background-color: black;
+  height: 270px;
+  width: 100%;
+  border-top: 0.5px solid rgb(217, 217, 217);
+  background-color: #f0f0f0;
+}
+
+.footer-wrap {
+  height: 100%;
+  width: 1120px;
+  margin: 0 auto;
+  padding: 60px 0;
+  box-sizing: border-box;
+}
+
+.footer-list {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 14px;
+  color: rgb(105, 105, 105);
+}
+
+.footer-list > li {
+  line-height: 200%;
+  margin-right: 60px;
 }
