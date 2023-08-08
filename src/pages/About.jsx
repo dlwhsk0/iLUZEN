@@ -1,18 +1,21 @@
 import React from "react";
+import Header from "../component/Header";
 import contPhoto from "../image/about.jpg";
 
 export default function About() {
   return (
     <div className="aboutWrap">
+      <Header />
+      <div className="top"></div>
       <div className="contBox-1">
         <div className="contBox-1-wrap">
           <p className="category">ABOUT US</p>
           <p style={{ height: "20px" }}></p>
-          <p className="title">JH시스템을 찾아주셔서 감사합니다.</p>
+          <p className="title">iLuzen을 찾아주셔서 감사합니다.</p>
           <p style={{ height: "50px" }}></p>
           <div className="contBox-1-content">
             <p>
-              JH시스템은 건설 분야 중 하나인 가설구조물 설계 전문 기업입니다.
+              iLuzen은 건설 분야 중 하나인 가설구조물 설계 전문 기업입니다.
               가설구조물 중 시스템 동바리, 시스템 비계를 주로 설계하고 있습니다.
               <p style={{ height: "20px" }}></p>
               첨단 기술과 엔지니어링 원칙을 활용하여 시스템 동바리와 시스템

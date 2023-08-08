@@ -1,4 +1,6 @@
 import React from "react";
+import Header from "../component/Header";
+
 import call from "../image/call.png";
 import email from "../image/email.png";
 import kakaotalk from "../image/kakaotalk.png";
@@ -6,6 +8,9 @@ import kakaotalk from "../image/kakaotalk.png";
 export default function Contact() {
   return (
     <div className="contactWrap">
+      <div className="top">
+        <Header />
+      </div>
       <div className="contactbox">
         <div className="subtitle">
           <p className="category">CONTACT</p>
