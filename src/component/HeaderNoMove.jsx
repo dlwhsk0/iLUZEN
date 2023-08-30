@@ -80,7 +80,8 @@ export default function HeaderNoMove() {
         <div className="section">
           <div className="sectionwrap">
             <div className="quatewrap">
-              <span className="quate">ONLINE QUATE CONTACT</span>
+              <p className="quate">ONLINE QUATE CONTACT</p>
+              <p className="quate">ONLINE QUATE CONTACT</p>
             </div>
           </div>
         </div>
