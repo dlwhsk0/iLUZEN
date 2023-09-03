@@ -6,7 +6,7 @@ export default function Footer() {
     <footer>
       <div className="footer-wrap">
         <img className="footer-img" src={footerlogo} alt="로고" />
-        <p style={{ height: "20px" }}></p>
+        <p style={{ height: "15px" }}></p>
         <div>
           <ul className="footer-list">
             <li>회사명: iLuzen</li>

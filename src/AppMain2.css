@@ -1,12 +1,13 @@
-@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+/* @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css); */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   list-style: none;
   text-decoration: none;
-  font-family: Roboto;
-  font-family: "Spoqa Han Sans Neo", "sans-serif";
+  /* font-family: "Spoqa Han Sans Neo", "sans-serif"; */
+  font-family: "Noto Sans KR", sans-serif;
   /* 패딩의 크기 증가 현상 없애기 */
   box-sizing: border-box;
 }
@@ -16,13 +17,14 @@ body {
 }
 
 header {
+  /* 띄우기 */
   position: absolute;
   left: 0;
   top: 0;
   z-index: 100;
   width: 100%;
   height: 70px;
-  padding: 0 70px;
+  padding: 0 80px;
 }
 
 .headerwrap {
@@ -57,12 +59,26 @@ header {
 /* main */
 main {
   width: 100%;
+  position: relative;
+  padding-bottom: 200px;
+}
+/* 배경 흐리게 를 위한 가상요소 */
+main::after {
+  width: 100%;
+  height: 100%;
+  content: "";
   background-image: url("./image/blueprint4.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.5;
+  z-index: -1;
 }
 
+/*  수직수평 중앙 정렬 */
 .center {
   display: flex;
   align-items: center;
@@ -74,7 +90,7 @@ main {
 
 .section {
   padding: 0 80px;
-  height: 1000px;
+  height: 970px;
 }
 .sectionwrap {
   height: 100%;
@@ -84,24 +100,32 @@ main {
   /* border: 1px black solid; */
 }
 
+/* section1 - title */
 .title {
   font-weight: 900;
-  font-size: 50px;
+  font-size: 45px;
   text-align: center;
   color: #002970;
 }
 
+/* section2 - 회사 소개 */
 .content {
-  font-size: 30px;
-  font-weight: 600;
   margin: 200px 0 0 100px;
 }
+.content-title {
+  font-size: 60px;
+  font-weight: 900;
+  color: #002970;
+}
 .content > p {
-  width: 850px;
+  font-size: 22px;
+  font-weight: 500;
+  width: 730px;
   margin-bottom: 30px;
   color: #000000;
 }
 
+/* section3 - 설계품목 */
 .product {
   height: 100%;
   width: 100%;
@@ -125,7 +149,6 @@ main {
 .productright {
   height: 100%;
   width: 100%;
-
   /* border: 2px #d66a6a solid; */
 }
 .productlist {
@@ -152,14 +175,74 @@ main {
   transform: translate(-50%, -50%);
   color: white;
   font-size: 25px;
-  font-weight: 400;
+  font-weight: 500;
 }
 
+/* section4 - 온라인 견적 */
 .quatewrap {
-  width: 100%;
+  width: auto;
+  height: auto;
+  padding-top: 250px;
 }
 .quate {
+  width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+}
+.quate-title {
   font-weight: 900;
-  font-size: 60px;
-  color: #000000;
+  font-size: 70px;
+  color: #002970;
+}
+.quate-text {
+  font-weight: 600;
+  font-size: 25px;
+}
+.quate-btn {
+  height: 70px;
+  width: 250px;
+  padding: 20px;
+  font-weight: 900;
+  font-size: 20px;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 400px;
+  right: 0;
+  border: 2px #000000 solid;
+}
+.quate-btn > img {
+  height: auto;
+  width: 30px;
+  object-fit: contain;
+}
+
+/* footer */
+footer {
+  background-color: #d9d9d9;
+}
+.footer-wrap {
+  width: 1400px;
+  min-width: 600px;
+  margin: 0 auto;
+  padding: 60px 0;
+}
+.footer-img {
+  height: auto;
+  width: 200px;
+  object-fit: contain;
+}
+.footer-list {
+  display: flex;
+  flex-wrap: wrap;
+  font-weight: 500;
+  font-size: 15px;
+  color: rgb(69, 69, 69);
+}
+.footer-list > li {
+  line-height: 200%;
+  margin-right: 20px;
 }
