@@ -72,8 +72,8 @@ main::after {
   height: 100%;
   content: "";
   background-image: url("./image/blueprint4.jpg");
-  background-repeat: no-repeat;
   background-size: cover;
+  background-repeat: repeat-y;
   background-attachment: fixed;
   position: absolute;
   top: 0;
@@ -135,6 +135,7 @@ main::after {
 }
 .productleft {
   width: 180px;
+  display: flex;
 }
 .producttitle {
   font-size: 30px;
