@@ -73,7 +73,7 @@ main::after {
   content: "";
   background-image: url("./image/blueprint4.jpg");
   background-size: cover;
-  background-repeat: repeat-y;
+  background-repeat: no-repeat;
   background-attachment: fixed;
   position: absolute;
   top: 0;

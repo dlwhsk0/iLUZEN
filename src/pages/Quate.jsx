@@ -1,7 +1,4 @@
 import React from "react";
-import call from "../image/call.png";
-import email from "../image/email.png";
-import kakaotalk from "../image/kakaotalk.png";
 
 export default function Quate() {
   return (
