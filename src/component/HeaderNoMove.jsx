@@ -1,11 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function HeaderNoMove() {
   return (
     <>
       <header>
         <div className="headerwrap">
-          <div className="logo"></div>
+          <Link to="/">
+            <div className="logo"></div>
+          </Link>
           <div>
             <button className="menubtn"></button>
           </div>

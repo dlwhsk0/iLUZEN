@@ -15,6 +15,10 @@ html,
 body {
   position: relative;
 }
+/* 스크롤바 없애기 */
+body::-webkit-scrollbar {
+  display: none;
+}
 
 header {
   /* 띄우기 */
@@ -60,7 +64,7 @@ header {
 main {
   width: 100%;
   position: relative;
-  padding-bottom: 200px;
+  padding-bottom: 100px;
 }
 /* 배경 흐리게 를 위한 가상요소 */
 main::after {
@@ -83,9 +87,6 @@ main::after {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.flex {
-  display: flex;
 }
 
 .section {
@@ -203,8 +204,7 @@ main::after {
   height: 70px;
   width: 250px;
   padding: 20px;
-  font-weight: 900;
-  font-size: 20px;
+
   background-color: white;
   display: flex;
   justify-content: space-between;
@@ -214,10 +214,161 @@ main::after {
   right: 0;
   border: 2px #000000 solid;
 }
-.quate-btn > img {
+.quate-btn > p {
+  font-weight: 900;
+  font-size: 20px;
+  color: black;
+}
+.quate-btn-img {
   height: auto;
   width: 30px;
   object-fit: contain;
+}
+
+/* quate.jsx */
+.quatepage-wrap {
+  width: 100%;
+  min-height: 1000px;
+  padding-top: 150px;
+}
+/* 배경 흐리게 를 위한 가상요소 */
+.quatepage-wrap::after {
+  width: 100%;
+  height: 100%;
+  content: "";
+  background-image: url("./image/floorplan1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.5;
+  z-index: -1;
+}
+
+.quatebox {
+  width: 1400px;
+  margin: 0 auto;
+  text-align: center;
+  border-radius: 40px 40px 0 0;
+}
+.quatebox-title {
+  margin-bottom: 100px;
+  font-size: 60px;
+  font-weight: 900;
+  color: #002970;
+}
+
+.askbox {
+  width: 1400px;
+  height: 1000px;
+  margin: 0 auto;
+  padding-top: 100px;
+  border-radius: 60px 60px 0 0;
+  background-color: white;
+}
+.askbox-list {
+  width: 1000px;
+  margin: 0 auto;
+}
+.askbox-list > li {
+  width: 100%;
+  margin: 40px 0;
+  display: flex;
+  justify-content: space-between;
+}
+.askbox-list > li > span {
+  font-size: 20px;
+  font-weight: 600;
+  color: rgb(83, 83, 83);
+}
+.askbox-list > li > input {
+  width: 850px;
+  height: 35px;
+  padding: 0 10px;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.askbox-user-list {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.askbox-user-list > li {
+  text-align: left;
+}
+.askbox-user-list > li > span {
+  font-size: 20px;
+  font-weight: 600;
+  color: rgb(83, 83, 83);
+}
+.askbox-user-list > li > input {
+  height: 35px;
+  padding: 0 10px;
+  font-size: 17px;
+  font-weight: 500;
+}
+#user-name {
+  width: 250px;
+  margin-left: 112px;
+}
+#user-email {
+  width: 400px;
+  margin-left: 50px;
+}
+
+#file {
+  font-size: 17px;
+  line-height: 35px;
+}
+#askcontent {
+  width: 850px;
+  height: 470px;
+  padding: 10px;
+  resize: none;
+  font-size: 17px;
+  font-weight: 500;
+}
+#submit {
+  width: 60px;
+  font-size: 17px;
+  line-height: 25px;
+}
+
+/* footer */
+footer {
+  height: 200px;
+  width: 100%;
+  border-top: 0.5px solid rgb(217, 217, 217);
+  background-color: #f0f0f0;
+}
+
+.footer-wrap {
+  height: 100%;
+  width: 1120px;
+  margin: 0 auto;
+  padding: 60px 0;
+  box-sizing: border-box;
+}
+
+.footer-img {
+  height: auto;
+  width: 150px;
+  object-fit: contain;
+}
+
+.footer-list {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 14px;
+  color: rgb(105, 105, 105);
+}
+
+.footer-list > li {
+  line-height: 200%;
+  margin-right: 60px;
 }
 
 /* footer */
@@ -232,7 +383,7 @@ footer {
 }
 .footer-img {
   height: auto;
-  width: 200px;
+  width: 150px;
   object-fit: contain;
 }
 .footer-list {
@@ -243,6 +394,5 @@ footer {
   color: rgb(69, 69, 69);
 }
 .footer-list > li {
-  line-height: 200%;
   margin-right: 20px;
 }
