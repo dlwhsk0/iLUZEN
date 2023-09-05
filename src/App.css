@@ -1,38 +1,402 @@
-.App {
-  text-align: center;
+/* @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css); */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  /* font-family: "Spoqa Han Sans Neo", "sans-serif"; */
+  font-family: "Noto Sans KR", sans-serif;
+  /* 패딩의 크기 증가 현상 없애기 */
+  box-sizing: border-box;
+}
+html,
+body {
+  position: relative;
+}
+/* 스크롤바 없애기 */
+body::-webkit-scrollbar {
+  display: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* HEADER */
+header {
+  /* 띄우기 */
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  height: 70px;
+  padding: 0 80px;
+}
+.header-scroll {
+  position: fixed;
+  /* background-color: rgb(248, 248, 248); */
+  height: 50px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.headerwrap {
+  height: 100%;
+  width: 1400px;
+  min-width: 600px;
+  margin: 0 auto;
+  /* 수직중앙 정렬 */
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  height: 30px;
+  width: 130px;
+  background-image: url("./image/iluzen-logo.png");
+  background-size: 100% 100%;
+}
+
+.menubtn {
+  height: 30px;
+  width: 30px;
+  border: 0;
+  outline: 0;
+  background-image: url("./image/btn.png");
+  background-size: 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* main */
+main {
+  width: 100%;
+  position: relative;
+  padding-bottom: 300px;
+}
+/* 배경 흐리게 를 위한 가상요소 */
+main::after {
+  width: 100%;
+  height: 100%;
+  content: "";
+  background-image: url("./image/blueprint4.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.5;
+  z-index: -1;
+}
+
+/*  수직수평 중앙 정렬 */
+.center {
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.section {
+  padding: 0 80px;
+  height: 970px;
+}
+.sectionwrap {
+  height: 100%;
+  width: 1400px;
+  margin: 0 auto;
+  min-width: 600px;
+}
+
+/* section1 - title */
+.title {
+  font-weight: 900;
+  font-size: 45px;
+  text-align: center;
+  color: #002970;
+}
+
+/* section2 - 회사 소개 */
+.content {
+  margin: 200px 0 0 100px;
+}
+.content-title {
+  font-size: 60px;
+  font-weight: 900;
+  color: #002970;
+}
+.content > p {
+  font-size: 22px;
+  font-weight: 500;
+  width: 730px;
+  margin-bottom: 30px;
+  color: #000000;
+}
+
+/* section3 - 설계품목 */
+.product {
+  height: 100%;
+  width: 100%;
+  padding: 100px;
+  display: flex;
+}
+.productleft {
+  width: 180px;
+  display: flex;
+}
+.producttitle {
+  font-size: 30px;
+  font-weight: 900;
+  color: #002970;
+}
+.bar {
+  height: 35px;
+  width: 4px;
+  margin: 5px 0 0 15px;
+  background-color: #002970;
+}
+.productright {
+  height: 100%;
+  width: 100%;
+}
+.productlist {
+  height: 750px;
+  width: 1000px;
+  float: right;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.productitem {
+  position: relative;
+}
+.productitem > img {
+  height: 140px;
+  width: 100%;
+  object-fit: cover;
+}
+.productitem > p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   color: white;
+  font-size: 25px;
+  font-weight: 500;
 }
 
-.App-link {
-  color: #61dafb;
+/* section4 - 온라인 견적 */
+.quatewrap {
+  width: auto;
+  height: auto;
+  padding-top: 400px;
+}
+.quate {
+  width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+}
+.quate-title {
+  font-weight: 900;
+  font-size: 70px;
+  color: #002970;
+}
+.quate-text {
+  font-weight: 600;
+  font-size: 25px;
+}
+.quate-btn {
+  height: 70px;
+  width: 250px;
+  padding: 20px;
+
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 350px;
+  right: 0;
+  border: 2px #000000 solid;
+}
+.quate-btn > p {
+  font-weight: 900;
+  font-size: 20px;
+  color: black;
+}
+.quate-btn-img {
+  height: auto;
+  width: 30px;
+  object-fit: contain;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* quate.jsx */
+.quatepage-wrap {
+  width: 100%;
+  min-height: 1000px;
+  padding-top: 150px;
+}
+/* 배경 흐리게 를 위한 가상요소 */
+.quatepage-wrap::after {
+  width: 100%;
+  height: 100%;
+  content: "";
+  background-image: url("./image/floorplan1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.5;
+  z-index: -1;
+}
+
+.quatebox {
+  width: 1400px;
+  margin: 0 auto;
+  text-align: center;
+  border-radius: 40px 40px 0 0;
+}
+.quatebox-title {
+  margin-bottom: 100px;
+  font-size: 60px;
+  font-weight: 900;
+  color: #002970;
+}
+
+.askbox {
+  width: 1400px;
+  height: 1000px;
+  margin: 0 auto;
+  padding-top: 100px;
+  border-radius: 60px 60px 0 0;
+  background-color: white;
+}
+.askbox-list {
+  width: 1000px;
+  margin: 0 auto;
+}
+.askbox-list > li {
+  width: 100%;
+  margin: 40px 0;
+  display: flex;
+  justify-content: space-between;
+}
+.askbox-list > li > span {
+  font-size: 20px;
+  font-weight: 600;
+  color: rgb(83, 83, 83);
+}
+.askbox-list > li > input {
+  width: 850px;
+  height: 35px;
+  padding: 0 10px;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.askbox-user-list {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.askbox-user-list > li {
+  text-align: left;
+}
+.askbox-user-list > li > span {
+  font-size: 20px;
+  font-weight: 600;
+  color: rgb(83, 83, 83);
+}
+.askbox-user-list > li > input {
+  height: 35px;
+  padding: 0 10px;
+  font-size: 17px;
+  font-weight: 500;
+}
+#user-name {
+  width: 250px;
+  margin-left: 112px;
+}
+#user-email {
+  width: 400px;
+  margin-left: 50px;
+}
+
+#file {
+  font-size: 17px;
+  line-height: 35px;
+}
+#askcontent {
+  width: 850px;
+  height: 470px;
+  padding: 10px;
+  resize: none;
+  font-size: 17px;
+  font-weight: 500;
+}
+#submit {
+  width: 60px;
+  font-size: 17px;
+  line-height: 25px;
+}
+
+/* footer */
+footer {
+  height: 200px;
+  width: 100%;
+  border-top: 0.5px solid rgb(217, 217, 217);
+  background-color: #f0f0f0;
+}
+
+.footer-wrap {
+  height: 100%;
+  width: 1120px;
+  margin: 0 auto;
+  padding: 60px 0;
+  box-sizing: border-box;
+}
+
+.footer-img {
+  height: auto;
+  width: 150px;
+  object-fit: contain;
+}
+
+.footer-list {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 14px;
+  color: rgb(105, 105, 105);
+}
+
+.footer-list > li {
+  line-height: 200%;
+  margin-right: 60px;
+}
+
+/* footer */
+footer {
+  background-color: #dfdfdf;
+}
+.footer-wrap {
+  width: 1400px;
+  min-width: 600px;
+  margin: 0 auto;
+  padding: 60px 0;
+}
+.footer-img {
+  height: auto;
+  width: 150px;
+  object-fit: contain;
+}
+.footer-list {
+  display: flex;
+  flex-wrap: wrap;
+  font-weight: 500;
+  font-size: 15px;
+  color: rgb(69, 69, 69);
+}
+.footer-list > li {
+  margin-right: 20px;
 }
