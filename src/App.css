@@ -1,4 +1,11 @@
 @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+/* @font-face {
+  font-family: "Happiness-Sans-Bold";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2205@1.0/Happiness-Sans-Bold.woff2")
+    format("woff2");
+  font-weight: 700;
+  font-style: normal;
+} */
 
 * {
   margin: 0;
@@ -6,6 +13,7 @@
   list-style: none;
   text-decoration: none;
   font-family: "Spoqa Han Sans Neo", "sans-serif";
+  /* font-family: "Happiness-Sans-Bold"; */
   /* 패딩의 크기 증가 현상 없애기 */
   box-sizing: border-box;
 }
