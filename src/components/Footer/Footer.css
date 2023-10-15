@@ -1,0 +1,30 @@
+footer {
+  background-color: #dfdfdf;
+}
+.footer-wrap {
+  width: 100%;
+  min-width: 1300px;
+  max-width: 1500px;
+  height: 150px;
+  padding: 30px 80px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer-wrap > img {
+  height: auto;
+  width: 150px;
+  object-fit: contain;
+}
+.footer-wrap > div {
+  width: 80%;
+}
+.footer-list {
+  display: flex;
+  justify-content: space-between;
+
+  font-weight: 500;
+  font-size: 15px;
+  color: rgb(69, 69, 69);
+}
