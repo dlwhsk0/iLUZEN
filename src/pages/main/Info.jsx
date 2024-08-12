@@ -1,5 +1,4 @@
 import InfoCard from '../../components/InfoCard'
-import iluzenText from '../../images/iluzen/iluzen-text.png'
 import config from '../../config/config'
 
 export default function Info() {

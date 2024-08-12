@@ -21,9 +21,9 @@ export default function ItemsVer3() {
       </div>
 
       <div className='w-full max-w-[1280px] flex items-center justify-center gap-10'>
-        <ItemCard src={pipeSupport} title='파이프써포트' />
         <ItemCard src={systemDongbari} title='시스템동바리' />
         <ItemCard src={systemBigye} title='시스템비계' />
+        <ItemCard src={pipeSupport} title='파이프써포트' />
         <ItemCard src={ganggwanBigye} title='강관비계' />
       </div>
     </div>

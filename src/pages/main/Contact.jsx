@@ -11,6 +11,7 @@ export default function Contact() {
       <img
         src={contact}
         className='absolute inset-0 w-full h-full object-cover z-[-10]'
+        alt=''
       />
       <div className='w-[1280px] flex flex-col gap-7'>
         <div className='text-white text-[28px]'>
@@ -21,6 +22,7 @@ export default function Contact() {
             <img
               src={contact1}
               className='h-[30px] object-contain ml-[50px] mr-5'
+              alt=''
             />
             <span>작업 의뢰</span>
           </div>
@@ -28,6 +30,7 @@ export default function Contact() {
             <img
               src={contact2}
               className='h-[35px] object-contain ml-[50px] mr-5'
+              alt=''
             />
             <span>채용 문의</span>
           </div>
