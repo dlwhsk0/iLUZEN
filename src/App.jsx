@@ -1,15 +1,15 @@
-import React from "react";
-import Home from "./pages/Home/Home.jsx";
-import Header from "./components/Header/Header.jsx";
-import Footer from "./components/Footer/Footer.jsx";
-import "./App.css";
+import React from 'react'
+import Header from './components/Header'
+import './App.css'
+import Main from './pages/main/Main'
+import Footer from './components/Footer'
 
 export default function App() {
   return (
-    <div className="App">
+    <div className='relative'>
       <Header />
-      <Home />
+      <Main />
       <Footer />
     </div>
-  );
+  )
 }
