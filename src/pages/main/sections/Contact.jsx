@@ -4,6 +4,10 @@ import contact2 from '../../../images/contact2.png'
 import config from '../../../config/config'
 
 export default function Contact() {
+  const handleRequestClick = () => {
+    window.open('/request', '_blank', 'width=600,height=800,left=200,top=100')
+  }
+
   return (
     <div
       id='고객지원'
@@ -19,7 +23,10 @@ export default function Contact() {
           {config.companyName.en}은 앞선 생각으로 새로운 미래를 창조합니다.
         </div>
         <div className='flex gap-[40px] text-[22px]'>
-          <div className='w-[375px] h-[95px] flex items-center border border-black bg-white cursor-pointer'>
+          <div
+            className='w-[375px] h-[95px] flex items-center border border-black bg-white cursor-pointer'
+            onClick={handleRequestClick}
+          >
             <img
               src={contact1}
               className='h-[30px] object-contain ml-[50px] mr-5'
