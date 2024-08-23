@@ -9,7 +9,7 @@
 - YARN
 - VISUAL STUDIO CODE
 
-### 2차 (2024.08 예정)
+### 2차 (추후 마이그레이션 예정)
 
 - TYPESCRIPT
 - Next.js
