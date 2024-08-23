@@ -53,7 +53,7 @@ export default function Footer() {
         </div>
         <div className='w-full flex items-center text-[#ECECEC]'>
           <div className='w-full flex flex-col gap-2 text-[12px]'>
-            <span>회사명 | {config.companyName}</span>
+            <span>회사명 | {config.companyName.en}</span>
             <span>대표자 | {config.contactInfo.representative}</span>
             <span>이메일 | {config.contactInfo.email}</span>
             <span>전화 | {config.contactInfo.phone}</span>

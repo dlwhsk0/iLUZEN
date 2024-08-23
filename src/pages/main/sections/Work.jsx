@@ -13,7 +13,7 @@ export default function Work() {
             업무 소개 |
           </span>
           <span className='text-[22px] text-gray-800'>
-            끊임없는 혁신을 추구하는 {config.companyName}
+            끊임없는 혁신을 추구하는 {config.companyName.en}
           </span>
         </div>
         <div className=''>

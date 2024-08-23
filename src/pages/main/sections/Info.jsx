@@ -5,6 +5,7 @@ import pipeSupport from '../../../images/pipesupport.png'
 import ganggwanBigye from '../../../images/ganggwanbigye.png'
 import systemDongbari from '../../../images/systemdongbari.png'
 import systemBigye from '../../../images/systembigye.png'
+import config from '../../../config/config'
 
 export default function Info() {
   const scrollContainerRef = useRef(null)
@@ -39,7 +40,7 @@ export default function Info() {
           <img src={iluzenBlue} className='h-[50px]' alt='' />
           <span className='text-[#002970] text-[30px]'>|</span>
           <span className='text-[30px] text-gray-800 pt-[2px]'>
-            주식회사 이루젠
+            주식회사 {config.companyName.kr}
           </span>
         </div>
         <div

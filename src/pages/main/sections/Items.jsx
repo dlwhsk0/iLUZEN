@@ -16,7 +16,7 @@ export default function Items() {
           설계 품목 |
         </span>
         <span className='text-[22px] text-gray-800'>
-          끊임없는 혁신을 추구하는 {config.companyName}
+          끊임없는 혁신을 추구하는 {config.companyName.en}
         </span>
       </div>
 
