@@ -18,7 +18,7 @@ export default function Contact() {
           iLUZEN은 앞선 생각으로 새로운 미래를 창조합니다.
         </div>
         <div className='flex gap-[40px] text-[22px]'>
-          <div className='w-[375px] h-[95px] flex items-center border border-black bg-white'>
+          <div className='w-[375px] h-[95px] flex items-center border border-black bg-white cursor-pointer'>
             <img
               src={contact1}
               className='h-[30px] object-contain ml-[50px] mr-5'
@@ -26,7 +26,7 @@ export default function Contact() {
             />
             <span>작업 의뢰</span>
           </div>
-          <div className='w-[375px] h-[95px] flex items-center border border-black bg-white'>
+          <div className='w-[375px] h-[95px] flex items-center border border-black bg-white cursor-pointer'>
             <img
               src={contact2}
               className='h-[35px] object-contain ml-[50px] mr-5'
