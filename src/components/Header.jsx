@@ -16,26 +16,6 @@ export default function Header() {
     } else {
       console.error('Section not found:', sectionId)
     }
-
-    //   if (sectionElement) {
-    //     if (sectionId === '회사소개') {
-    //       // '회사소개'일 경우, 중앙에서 200px 더 내려가도록 스크롤 위치를 조정합니다.
-    //       const offsetTop =
-    //         sectionElement.getBoundingClientRect().top + window.pageYOffset - 100
-    //       window.scrollTo({
-    //         top: offsetTop,
-    //         behavior: 'smooth',
-    //       })
-    //     } else {
-    //       // 일반적인 경우 중앙으로 이동
-    //       sectionElement.scrollIntoView({
-    //         behavior: 'smooth',
-    //         block: 'center', // 중앙에 위치시키기
-    //       })
-    //     }
-    //   } else {
-    //     console.error('Section not found:', sectionId)
-    //   }
   }
 
   return (
