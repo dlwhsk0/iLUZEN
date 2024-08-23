@@ -5,11 +5,11 @@ export default function InfoCard({ content, src }) {
 
   return (
     <div
-      className='w-full flex flex-col gap-[-5px] items-center justify-center cursor-pointer'
+      className='w-full flex flex-col items-center justify-center cursor-pointer'
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className='h-[400px] w-full rounded-lg shadow-lg flex items-center justify-center'>
+      <div className='w-full h-[400px] rounded-lg shadow-lg flex items-center justify-center'>
         <img
           src={src}
           className='w-full h-full object-cover object-center overflow-hidden rounded-lg shadow-lg'

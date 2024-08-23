@@ -7,7 +7,7 @@ export default function Work() {
       id='업무소개'
       className='w-full p-[60px] flex items-center justify-center bg-gray-100'
     >
-      <div className='w-[1280px] min-w-[620px] flex flex-col justify-center items-center gap-5'>
+      <div className='w-[1280px] min-w-[720px] flex flex-col justify-center items-center gap-5'>
         <div>
           <span className='font-bold text-[#002970] text-[30px] mr-3'>
             업무 소개 |

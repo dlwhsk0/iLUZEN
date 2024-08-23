@@ -18,7 +18,7 @@ export default function Contact() {
         className='absolute inset-0 w-full h-full object-cover z-[-10]'
         alt=''
       />
-      <div className='w-[1280px] flex flex-col gap-7'>
+      <div className='w-[1280px] min-w-[720px] flex flex-col gap-7'>
         <div className='text-white text-[28px]'>
           {config.companyName.en}은 앞선 생각으로 새로운 미래를 창조합니다.
         </div>

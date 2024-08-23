@@ -35,8 +35,8 @@ export default function Info() {
       id='회사소개'
       className='w-full px-[60px] flex items-center justify-center'
     >
-      <div className='w-[1280px] min-w-[620px] flex flex-col items-center justify-center gap-5'>
-        <div className='w-[1280px] flex justify-center gap-3'>
+      <div className='w-[1280px] min-w-[720px] flex flex-col items-center justify-center gap-5'>
+        <div className='flex justify-center gap-3'>
           <img src={iluzenBlue} className='h-[50px]' alt='' />
           <span className='text-[#002970] text-[30px]'>|</span>
           <span className='text-[30px] text-gray-800 pt-[2px]'>

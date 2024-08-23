@@ -9,22 +9,23 @@ export default function Items() {
   return (
     <div
       id='설계품목'
-      className='w-full px-[60px] flex flex-col items-center justify-between gap-7'
+      className='w-full px-[60px] flex items-center justify-center'
     >
-      <div>
-        <span className='font-bold text-[#002970] text-[30px] mr-3'>
-          설계 품목 |
-        </span>
-        <span className='text-[22px] text-gray-800'>
-          끊임없는 혁신을 추구하는 {config.companyName.en}
-        </span>
-      </div>
-
-      <div className='w-full max-w-[1280px] flex items-center justify-center gap-10'>
-        <ItemCard src={systemDongbari} title='시스템동바리' />
-        <ItemCard src={systemBigye} title='시스템비계' />
-        <ItemCard src={pipeSupport} title='파이프써포트' />
-        <ItemCard src={ganggwanBigye} title='강관비계' />
+      <div className='w-[1280px] min-w-[720px] flex flex-col justify-center items-center gap-5'>
+        <div>
+          <span className='font-bold text-[#002970] text-[30px] mr-3'>
+            설계 품목 |
+          </span>
+          <span className='text-[22px] text-gray-800'>
+            끊임없는 혁신을 추구하는 {config.companyName.en}
+          </span>
+        </div>
+        <div className='w-full h-full grid grid-cols-4 gap-5'>
+          <ItemCard src={systemDongbari} title='시스템동바리' />
+          <ItemCard src={systemBigye} title='시스템비계' />
+          <ItemCard src={pipeSupport} title='파이프써포트' />
+          <ItemCard src={ganggwanBigye} title='강관비계' />
+        </div>
       </div>
     </div>
   )

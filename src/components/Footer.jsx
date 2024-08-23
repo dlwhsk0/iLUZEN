@@ -16,7 +16,7 @@ export default function Footer() {
 
   return (
     <div className='w-full h-[500px] mt-[150px] px-[60px] py-[100px] bg-[#181818] flex items-center justify-center'>
-      <div className='w-[1280px] min-w-[620px] h-full flex items-center justify-center flex-col gap-[70px]'>
+      <div className='w-[1280px] min-w-[720px] h-full flex items-center justify-center flex-col gap-[70px]'>
         <div className='w-full flex items-center'>
           <img
             src={logo_white}

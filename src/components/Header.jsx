@@ -55,7 +55,7 @@ export default function Header() {
       className='w-full h-[45px] px-[60px] py-0 flex items-center justify-center fixed top-0 left-0 right-0 z-50 bg-white'
       style={{ boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.4)' }}
     >
-      <div className='w-[1280px] min-w-[620px] flex items-center justify-between'>
+      <div className='w-[1280px] min-w-[720px] flex items-center justify-between'>
         <img src={logo} className='w-[150px]' alt='iluzen logo' />
         <nav className='w-[40%] min-w-[350px] text-[16px] flex items-center justify-between'>
           <span
