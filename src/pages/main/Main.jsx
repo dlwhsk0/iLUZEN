@@ -1,10 +1,8 @@
-import Contact from './Contact'
-import Intro from './Intro'
-import Work from './Work'
-// import ItemsVer1 from './ItemsVer1'
-// import ItemsVer2 from './ItemsVer2'
-import Info from './Info'
-import ItemsVer3 from './ItemsVer3'
+import Contact from './sections/Contact'
+import Intro from './sections/Intro'
+import Work from './sections/Work'
+import Items from './sections/Items'
+import Info from './sections/Info'
 
 export default function Main() {
   return (
@@ -12,9 +10,7 @@ export default function Main() {
       <Intro />
       <Info />
       <Work />
-      {/*<ItemsVer2 />*/}
-      {/*<ItemsVer1 />*/}
-      <ItemsVer3 />
+      <Items />
       <Contact />
     </div>
   )
