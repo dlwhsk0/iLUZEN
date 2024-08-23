@@ -1,5 +1,5 @@
-import work from '../../images/work.png'
-import config from '../../config/config'
+import work from '../../../images/work.png'
+import config from '../../../config/config'
 
 export default function Work() {
   return (

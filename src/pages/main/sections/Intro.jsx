@@ -1,5 +1,5 @@
-import intro from '../../images/intro.jpeg'
-import IntroScrollBar from '../../components/IntroScrollBar'
+import intro from '../../../images/intro.jpeg'
+import IntroScrollBar from '../../../components/IntroScrollBar'
 
 export default function Intro() {
   return (

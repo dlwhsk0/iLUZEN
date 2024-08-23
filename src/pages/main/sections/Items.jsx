@@ -1,11 +1,11 @@
-import ItemCard from '../../components/ItemCard'
-import pipeSupport from '../../images/pipesupport.png'
-import systemDongbari from '../../images/systemdongbari.png'
-import systemBigye from '../../images/systembigye.png'
-import ganggwanBigye from '../../images/ganggwanbigye.png'
-import config from '../../config/config'
+import ItemCard from '../../../components/ItemCard'
+import pipeSupport from '../../../images/pipesupport.png'
+import systemDongbari from '../../../images/systemdongbari.png'
+import systemBigye from '../../../images/systembigye.png'
+import ganggwanBigye from '../../../images/ganggwanbigye.png'
+import config from '../../../config/config'
 
-export default function ItemsVer3() {
+export default function Items() {
   return (
     <div
       id='설계품목'
