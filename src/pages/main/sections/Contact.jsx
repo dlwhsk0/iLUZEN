@@ -9,7 +9,7 @@ export default function Contact() {
     window.open(
       '/request',
       '_blank',
-      'width=600,height=700,left=100,top=100,resizable=no'
+      'width=600,height=750,left=100,top=100,resizable=no'
     )
   }
 
