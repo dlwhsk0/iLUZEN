@@ -3,7 +3,8 @@ import IntroScrollBar from '../../../components/IntroScrollBar'
 
 export default function Intro() {
   return (
-    <div className='w-full h-[800px] mt-[40px] relative flex items-center justify-center'>
+    // h-[850px] h-[90vh]
+    <div className='w-full h-[90vh] mt-[40px] relative flex items-center justify-center'>
       <img
         src={intro}
         className='w-full h-full object-cover object-center'
