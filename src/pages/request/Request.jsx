@@ -9,13 +9,14 @@ export default function RequestForm() {
     endDate: '',
     requirements: '',
     file: null,
+    sendCopy: false,
   })
 
   const handleChange = (e) => {
-    const { name, value } = e.target
+    const { name, value, type, checked } = e.target
     setFormData({
       ...formData,
-      [name]: value,
+      [name]: type === 'checkbox' ? checked : value,
     })
   }
 
@@ -29,28 +30,42 @@ export default function RequestForm() {
   const handleSubmit = (e) => {
     e.preventDefault()
 
-    const templateParams = {
-      companyName: formData.companyName,
-      contact: formData.contact,
-      startDate: formData.startDate,
-      endDate: formData.endDate,
-      requirements: formData.requirements,
-      file: formData.file ? formData.file.name : 'No file attached',
-    }
+    const confirmSubmit = window.confirm('제출하시겠습니까?')
 
-    emailjs
-      .send(
+    if (confirmSubmit) {
+      const templateParams = {
+        companyName: formData.companyName,
+        contact: formData.contact,
+        startDate: formData.startDate,
+        endDate: formData.endDate,
+        requirements: formData.requirements,
+        file: formData.file ? formData.file.name : 'No file attached',
+      }
+
+      const sendAdminEmail = emailjs.send(
         process.env.REACT_APP_EMAILJS_SERVICE_ID,
-        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+        process.env.REACT_APP_EMAILJS_ADMIN_TEMPLATE_ID,
         templateParams,
         process.env.REACT_APP_EMAILJS_API_KEYS
       )
-      .then((response) => {
-        alert('메일이 성공적으로 발송되었습니다.')
-      })
-      .catch((error) => {
-        alert('메일 발송에 실패했습니다.')
-      })
+
+      const sendCustomerEmail = formData.sendCopy
+        ? emailjs.send(
+            process.env.REACT_APP_EMAILJS_SERVICE_ID,
+            process.env.REACT_APP_EMAILJS_CUSTOMER_TEMPLATE_ID,
+            { ...templateParams, contact: formData.contact },
+            process.env.REACT_APP_EMAILJS_API_KEYS
+          )
+        : Promise.resolve() // sendCopy가 false일 경우 성공 처리
+
+      Promise.all([sendAdminEmail, sendCustomerEmail])
+        .then(() => {
+          alert('메일이 성공적으로 발송되었습니다.')
+        })
+        .catch(() => {
+          alert('메일 발송에 실패했습니다.')
+        })
+    }
   }
 
   const handleClose = () => {
@@ -64,7 +79,7 @@ export default function RequestForm() {
     <div className='w-[600px] h-[800px] p-5'>
       <span className='text-[30px] text-[#002970] font-bold'>작업 의뢰</span>
       <form
-        className='mt-3 flex flex-col gap-5 border rounded p-4'
+        className='mt-3 flex flex-col gap-5 border rounded px-5 py-7'
         onSubmit={handleSubmit}
       >
         <div className='flex items-center justify-between gap-2'>
@@ -78,10 +93,10 @@ export default function RequestForm() {
           />
         </div>
         <div className='flex items-center justify-between gap-2'>
-          <span className='text-gray-700'>연락처</span>
+          <span className='text-gray-700'>회신 이메일</span>
           <input
             className='w-[420px] bg-gray-100 rounded px-2 py-1'
-            type='tel'
+            type='email'
             name='contact'
             value={formData.contact}
             onChange={handleChange}
@@ -126,8 +141,17 @@ export default function RequestForm() {
           <span className='mr-2'>도면 첨부</span>
           <input type='file' name='file' onChange={handleFileChange} />
         </div>
+        <div className='flex items-center gap-2'>
+          <input
+            type='checkbox'
+            name='sendCopy'
+            checked={formData.sendCopy}
+            onChange={handleChange}
+          />
+          <span className='text-gray-700'>제출 내용 메일로 받기</span>
+        </div>
       </form>
-      <div className='mt-3 flex gap-2'>
+      <div className='mt-4 flex gap-2'>
         <button
           className='px-4 py-1.5 bg-[#002970] text-white rounded cursor-pointer'
           type='submit'
