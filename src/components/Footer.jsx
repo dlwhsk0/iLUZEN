@@ -16,7 +16,7 @@ export default function Footer() {
 
   return (
     <div className='w-full h-[500px] mt-[150px] px-[60px] py-[100px] bg-[#181818] flex items-center justify-center'>
-      <div className='w-[1280px] min-w-[720px] h-full flex items-center justify-center flex-col gap-[70px]'>
+      <div className='w-full max-w-[1280px] h-full flex items-center justify-center flex-col gap-[70px]'>
         <div className='w-full flex items-center'>
           <img
             src={logo_white}
@@ -24,7 +24,7 @@ export default function Footer() {
             alt='iluzen logo'
             onClick={scrollToTop}
           />
-          <div className='min-w-[370px] text-[18px] font-bold flex items-center gap-10 text-white'>
+          <div className='text-[18px] font-bold flex items-center gap-10 text-white'>
             <span
               onClick={() => scrollToSection('회사소개')}
               className='cursor-pointer'

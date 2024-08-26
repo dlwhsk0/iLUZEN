@@ -17,7 +17,7 @@ export default function InfoCard({ content, src }) {
         />
       </div>
       <div
-        className={`w-full flex items-center justify-center bg-[#132648] text-white transition-all duration-[700ms] ${isHovered ? 'h-[400px] clip-path-[polygon(0_0,0_100%,100%_100%,100%_0)] opacity-100' : 'h-0 clip-path-[polygon(0_0,0_0,100%_0,100%_0)] opacity-0'}`}
+        className={`w-full flex items-center justify-center bg-[#132648] text-white transition-all duration-[800ms] ${isHovered ? 'h-[400px] clip-path-[polygon(0_0,0_100%,100%_100%,100%_0)] opacity-100' : 'h-0 clip-path-[polygon(0_0,0_0,100%_0,100%_0)] opacity-0'}`}
         style={{
           clipPath: isHovered
             ? 'polygon(0 0, 0 100%, 100% 100%, 100% 0)'
