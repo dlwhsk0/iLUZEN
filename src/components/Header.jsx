@@ -13,8 +13,6 @@ export default function Header() {
         behavior: 'smooth',
         block: 'center', // 중앙에 위치시키기
       })
-    } else {
-      console.error('Section not found:', sectionId)
     }
   }
 

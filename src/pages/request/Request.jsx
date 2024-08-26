@@ -46,11 +46,9 @@ export default function RequestForm() {
         process.env.REACT_APP_EMAILJS_API_KEYS
       )
       .then((response) => {
-        console.log(response)
         alert('메일이 성공적으로 발송되었습니다.')
       })
       .catch((error) => {
-        console.error('메일 발송에 실패했습니다.', error)
         alert('메일 발송에 실패했습니다.')
       })
   }
