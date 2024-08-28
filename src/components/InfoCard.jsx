@@ -9,7 +9,7 @@ export default function InfoCard({ content, src }) {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className='w-full h-[400px] rounded-lg shadow-lg flex items-center justify-center'>
+      <div className='w-full rounded-lg shadow-lg flex items-center justify-center h-[150px] lg:h-[350px] md:h-[220px] sm:h-[200px] transition-all duration-[800ms]'>
         <img
           src={src}
           className='w-full h-full object-cover object-center overflow-hidden rounded-lg shadow-lg'
@@ -17,7 +17,7 @@ export default function InfoCard({ content, src }) {
         />
       </div>
       <div
-        className={`w-full flex items-center justify-center bg-[#132648] text-white transition-all duration-[800ms] ${isHovered ? 'h-[400px] clip-path-[polygon(0_0,0_100%,100%_100%,100%_0)] opacity-100' : 'h-0 clip-path-[polygon(0_0,0_0,100%_0,100%_0)] opacity-0'}`}
+        className={`w-full flex items-center justify-center bg-[#132648] text-white transition-all duration-[800ms] ${isHovered ? 'h-[150px] lg:h-[300px] md:h-[300px] sm:h-[250px] clip-path-[polygon(0_0,0_100%,100%_100%,100%_0)] opacity-100' : 'h-0 clip-path-[polygon(0_0,0_0,100%_0,100%_0)] opacity-0'}`}
         style={{
           clipPath: isHovered
             ? 'polygon(0 0, 0 100%, 100% 100%, 100% 0)'

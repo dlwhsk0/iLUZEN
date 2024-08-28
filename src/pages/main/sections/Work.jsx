@@ -9,18 +9,18 @@ export default function Work() {
   return (
     <div
       id='업무소개'
-      className='w-full p-[60px] flex items-center justify-center bg-gray-100'
+      className='w-full p-[30px] flex items-center justify-center bg-gray-100'
     >
-      <div className='w-full max-w-[1280px] flex flex-col justify-center items-center gap-5'>
-        <div>
+      <div className='w-full max-w-[1280px] flex flex-col justify-center items-center'>
+        <div className='w-full flex flex-col sm:items-center justify-center sm:flex-row'>
           <span className='font-bold text-[#002970] text-[30px] mr-3'>
             업무 소개 |
           </span>
-          <span className='text-[22px] text-gray-800'>
+          <span className='sm:text-[22px] text-gray-800'>
             끊임없는 혁신을 추구하는 {config.companyName.en}
           </span>
         </div>
-        <div className='w-full max-w-[750px] flex flex-col justify-center items-center gap-5'>
+        <div className='w-[90%] h-full max-w-[750px] mt-7 flex flex-col justify-center items-center gap-5'>
           <WorkCard
             content='고객으로부터 원도면(건축, 구조도면)을 접수'
             icon={workFolder}

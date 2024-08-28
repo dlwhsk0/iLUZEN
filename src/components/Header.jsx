@@ -50,12 +50,17 @@ export default function Header() {
 
   return (
     <div
-      className='w-full h-[45px] px-[60px] py-0 flex items-center justify-center fixed top-0 left-0 right-0 z-50 bg-white'
+      className='w-full sm:h-[45px] px-[30px] sm:px-[60px] py-1 flex items-center justify-center fixed top-0 left-0 right-0 z-50 bg-white'
       style={{ boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.4)' }}
     >
-      <div className='w-full max-w-[1280px] flex items-center justify-between'>
-        <img src={logo} className='w-[150px]' alt='iluzen logo' />
-        <nav className='w-[40%] min-w-[350px] text-[16px] flex items-center justify-between'>
+      <div className='w-full max-w-[1280px] flex flex-col sm:flex-row gap-1 items-center justify-center sm:justify-between transition-all duration-[800ms]'>
+        <img
+          src={logo}
+          className='w-[120px] sm:w-[140px] object-contain'
+          alt='iluzen logo'
+        />
+        <div className='w-full border sm:hidden' />
+        <nav className='w-full sm:w-[35%] sm:min-w-[300px] text-[16px] flex items-center justify-between'>
           <span
             className={`cursor-pointer ${active === '회사소개' ? 'text-[#002970] font-bold' : ''}`}
             onClick={() => handleClick('회사소개')}

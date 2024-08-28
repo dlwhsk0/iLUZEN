@@ -33,19 +33,23 @@ export default function Info() {
   return (
     <div
       id='회사소개'
-      className='w-full px-[60px] flex items-center justify-center'
+      className='w-full px-[30px] sm:px-[60px] flex items-center justify-center transition-all duration-[800ms]'
     >
       <div className='w-full max-w-[1280px] flex flex-col items-center justify-center gap-5'>
-        <div className='flex justify-center gap-3'>
-          <img src={iluzenBlue} className='h-[50px]' alt='' />
-          <span className='text-[#002970] text-[30px]'>|</span>
-          <span className='text-[30px] text-gray-800 pt-[2px]'>
+        <div className='flex flex-col sm:flex-row items-center justify-center sm:gap-3'>
+          <div className='flex gap-5'>
+            <img src={iluzenBlue} className='h-[50px]' alt='' />
+            <span className='text-[#002970] text-[30px] hidden sm:block'>
+              |
+            </span>
+          </div>
+          <span className='text-[25px] sm:text-[30px] text-gray-800 pt-[2px]'>
             주식회사 {config.companyName.kr}
           </span>
         </div>
         <div
           ref={scrollContainerRef}
-          className='w-full h-full grid grid-cols-4 gap-5'
+          className='w-full h-full grid grid-cols-2 gap-5 lg:grid-cols-4'
           onMouseEnter={handleMouseEnter}
         >
           <InfoCard content={'혁신'} src={systemBigye} />
