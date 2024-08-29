@@ -1,4 +1,4 @@
-import contact from '../../../images/contact.jpeg'
+// import contact from '../../../images/contact.jpeg'
 import contact1 from '../../../images/contact1.png'
 import contact2 from '../../../images/contact2.png'
 import config from '../../../config/config'
