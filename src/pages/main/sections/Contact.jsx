@@ -3,6 +3,7 @@ import contact1 from '../../../images/contact1.png'
 import contact2 from '../../../images/contact2.png'
 import config from '../../../config/config'
 import ContactCard from '../../../components/ContactCard'
+import info5 from '../../../images/info5.jpeg'
 
 export default function Contact() {
   const handleRequestClick = () => {
@@ -22,8 +23,9 @@ export default function Contact() {
       id='고객지원'
       className='w-full relative py-[100px] sm:py-[130px] px-[30px] sm:px-[60px] flex items-center justify-center'
     >
+      <div className='absolute inset-0 z-[-5] w-full h-full bg-black opacity-30' />
       <img
-        src={contact}
+        src={info5}
         className='absolute inset-0 w-full h-full object-cover z-[-10]'
         alt=''
       />

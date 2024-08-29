@@ -9,7 +9,7 @@ export default function Work() {
   return (
     <div
       id='업무소개'
-      className='w-full p-[30px] flex items-center justify-center bg-gray-100'
+      className='w-full px-[30px] py-[80px] flex items-center justify-center bg-gray-100'
     >
       <div className='w-full max-w-[1280px] flex flex-col justify-center items-center'>
         <div className='w-full flex flex-col sm:items-center justify-center sm:flex-row'>
