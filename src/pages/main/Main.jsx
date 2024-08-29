@@ -6,7 +6,7 @@ import Info from './sections/Info'
 
 export default function Main() {
   return (
-    <div className='w-full h-full flex flex-col gap-[150px]'>
+    <div className='w-full h-full flex flex-col gap-[100px] sm:gap-[150px]'>
       <Intro />
       <Info />
       <Work />

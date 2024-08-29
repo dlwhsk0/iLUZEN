@@ -15,16 +15,16 @@ export default function Footer() {
   }, [])
 
   return (
-    <div className='w-full h-[500px] mt-[150px] px-[60px] py-[100px] bg-[#181818] flex items-center justify-center'>
-      <div className='w-full max-w-[1280px] h-full flex items-center justify-center flex-col gap-[70px]'>
-        <div className='w-full flex items-center'>
+    <div className='w-full h-[450px] sm:h-[500px] mt-[100px] sm:mt-[150px] px-[30px] sm:px-[60px] bg-[#181818] flex items-center justify-center transition-all duration-[800ms]'>
+      <div className='w-full max-w-[1280px] h-full flex items-center justify-center flex-col'>
+        <div className='w-full flex flex-col gap-3 sm:flex-row sm:justify-between'>
           <img
             src={logo_white}
-            className='w-[150px] mr-[100px] cursor-pointer'
+            className='w-[150px] cursor-pointer'
             alt='iluzen logo'
             onClick={scrollToTop}
           />
-          <div className='text-[18px] font-bold flex items-center gap-10 text-white'>
+          <div className='w-[80%] sm:w-[55%] max-w-[350px] text-[15px] sm:text-[18px] font-bold flex items-center justify-between text-white'>
             <span
               onClick={() => scrollToSection('회사소개')}
               className='cursor-pointer'
@@ -51,7 +51,7 @@ export default function Footer() {
             </span>
           </div>
         </div>
-        <div className='w-full flex items-center text-[#ECECEC]'>
+        <div className='w-full mt-[70px] flex items-center text-[#ECECEC]'>
           <div className='w-full flex flex-col gap-2 text-[12px]'>
             <span>회사명 | {config.companyName.en}</span>
             <span>대표자 | {config.contactInfo.representative}</span>
