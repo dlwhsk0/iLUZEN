@@ -6,7 +6,6 @@ import info1 from '../../../images/info1.jpeg'
 import info2 from '../../../images/info2.jpeg'
 import info3 from '../../../images/info3.jpeg'
 import info4 from '../../../images/info4.jpeg'
-// import info5 from '../../../images/info5.jpeg'
 
 export default function Info() {
   const scrollContainerRef = useRef(null)
@@ -20,7 +19,7 @@ export default function Info() {
       // 중앙보다 150px 아래로 스크롤 위치 계산
       const targetScrollTop =
         containerRect.top +
-        window.pageYOffset -
+        window.scrollY -
         (windowHeight / 2 - containerRect.height / 2) +
         150
 

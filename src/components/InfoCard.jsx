@@ -16,8 +16,8 @@ export default function InfoCard({ title, content, src }) {
           className='absolute inset-0 z-[-10] w-full h-full object-cover object-center overflow-hidden rounded-lg shadow-lg'
           alt=''
         />
-        <div className='absolute inset-0 z-10 w-full h-full p-4'>
-          <div className='w-full h-full flex items-center justify-center border-2 rounded text-white text-2xl'>
+        <div className='absolute inset-0 z-10 w-full h-full p-2 sm:p-4'>
+          <div className='w-full h-full flex items-center justify-center border-2 rounded text-white text-lg sm:text-2xl'>
             <span>{title}</span>
           </div>
         </div>

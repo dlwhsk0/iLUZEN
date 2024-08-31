@@ -14,7 +14,7 @@ export default function Intro() {
         alt='info'
       />
       <span
-        className='absolute z-[10] text-[70px] px-[30px] text-white text-center font-bold pb-[100px] transition-all duration-[800ms]'
+        className='absolute z-[10] text-[70px] md:text-[80px] px-[30px] text-white text-center font-bold pb-[100px] transition-all duration-[800ms]'
         style={{
           textShadow: '2px 2px 10px rgba(0, 0, 0, 0.3)',
         }}

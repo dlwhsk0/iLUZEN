@@ -14,7 +14,9 @@ export default function ItemCard({ src, title, content }) {
         <span className='font-bold md:text-[20px] sm:text-[18px] text-[15px]'>
           {title}
         </span>
-        <span className='hidden group-hover:block'>{content}</span>
+        <span className='hidden group-hover:block text-[11px] sm:text-[16px] overflow-scroll'>
+          {content}
+        </span>
       </div>
       <div className='absolute inset-0 bg-black opacity-0 transition-opacity duration-300 group-hover:opacity-60' />
     </div>
