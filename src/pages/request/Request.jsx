@@ -1,30 +1,107 @@
 import React, { useState } from 'react'
 import emailjs from 'emailjs-com'
+import {
+  RequestInputText,
+  RequestTextarea,
+  RequestDate,
+  RequestRadioButtons,
+} from '../../components/RequestInput'
 
 export default function RequestForm() {
   const [formData, setFormData] = useState({
-    companyName: '',
-    contact: '',
-    startDate: '',
-    endDate: '',
-    requirements: '',
-    file: null,
-    sendCopy: false,
+    companyName: '', // 회사명
+    customerName: '', // 고객명
+    contact: '', // 연락처
+    email: '', // 이메일
+    dueDate: '', // 마감희망일
+    structureReview: false, // 구조검토 여부
+    attachedDrawing: false, // 도면첨부 여부
+    systemDongbari: {
+      // 시스템동바리
+      installationArea: '', // 설치구간
+      type: '', // 타입
+      yokeDirection: '', // 멍에방향
+      spacing: '', // 이격거리
+      lowerRegulation: '', // 하부규정
+      structureType: '', // 구조
+      insulation: '', // 단열재
+      platform: '', // 발판
+      eyebrowInstallation: false, // 눈썹보 설치여부
+    },
+    systemScaffold: {
+      // 시스템비계
+      installationArea: '', // 설치구간
+      type: '', // 타입
+      yokeDirection: '', // 멍에방향
+      spacing: '', // 이격거리
+      lowerRegulation: '', // 하부규정
+      structureType: '', // 구조
+      insulation: '', // 단열재
+      platform: '', // 발판
+      eyebrowInstallation: false, // 눈썹보 설치여부
+    },
+    specialNotes: '', // 특이사항
   })
 
   const handleChange = (e) => {
-    const { name, value, type, checked } = e.target
-    setFormData({
-      ...formData,
-      [name]: type === 'checkbox' ? checked : value,
-    })
+    const { name, value, type } = e.target
+    const keys = name.split('.')
+    if (keys.length === 2) {
+      setFormData({
+        ...formData,
+        [keys[0]]: {
+          ...formData[keys[0]],
+          [keys[1]]: type === 'radio' ? value === 'true' : value,
+        },
+      })
+    } else {
+      setFormData({
+        ...formData,
+        [name]: type === 'radio' ? value === 'true' : value,
+      })
+    }
   }
 
-  const handleFileChange = (e) => {
-    setFormData({
+  const sendEmails = (formData) => {
+    const templateParams = {
       ...formData,
-      file: e.target.files[0],
-    })
+      structureReview: formData.structureReview ? '예' : '아니요',
+      attachedDrawing: formData.attachedDrawing ? '예' : '아니요',
+      systemDongbari: {
+        ...formData.systemDongbari,
+        eyebrowInstallation: formData.systemDongbari.eyebrowInstallation
+          ? '예'
+          : '아니요',
+      },
+      systemScaffold: {
+        ...formData.systemScaffold,
+        eyebrowInstallation: formData.systemScaffold.eyebrowInstallation
+          ? '예'
+          : '아니요',
+      },
+    }
+
+    const adminEmailPromise = emailjs.send(
+      process.env.REACT_APP_EMAILJS_SERVICE_ID,
+      process.env.REACT_APP_EMAILJS_ADMIN_TEMPLATE_ID,
+      templateParams,
+      process.env.REACT_APP_EMAILJS_API_KEYS
+    )
+
+    const customerEmailPromise = emailjs.send(
+      process.env.REACT_APP_EMAILJS_SERVICE_ID,
+      process.env.REACT_APP_EMAILJS_CUSTOMER_TEMPLATE_ID,
+      templateParams,
+      process.env.REACT_APP_EMAILJS_API_KEYS
+    )
+
+    Promise.all([adminEmailPromise, customerEmailPromise])
+      .then((responses) => {
+        alert('이메일 전송이 완료되었습니다.')
+      })
+      .catch((err) => {
+        console.error('Failed to send one or more emails:', err)
+      })
   }
 
   const handleSubmit = (e) => {
@@ -33,38 +110,7 @@ export default function RequestForm() {
     const confirmSubmit = window.confirm('제출하시겠습니까?')
 
     if (confirmSubmit) {
-      const templateParams = {
-        companyName: formData.companyName,
-        contact: formData.contact,
-        startDate: formData.startDate,
-        endDate: formData.endDate,
-        requirements: formData.requirements,
-        file: formData.file ? formData.file.name : 'No file attached',
-      }
-
-      const sendAdminEmail = emailjs.send(
-        process.env.REACT_APP_EMAILJS_SERVICE_ID,
-        process.env.REACT_APP_EMAILJS_ADMIN_TEMPLATE_ID,
-        templateParams,
-        process.env.REACT_APP_EMAILJS_API_KEYS
-      )
-
-      const sendCustomerEmail = formData.sendCopy
-        ? emailjs.send(
-            process.env.REACT_APP_EMAILJS_SERVICE_ID,
-            process.env.REACT_APP_EMAILJS_CUSTOMER_TEMPLATE_ID,
-            { ...templateParams, contact: formData.contact },
-            process.env.REACT_APP_EMAILJS_API_KEYS
-          )
-        : Promise.resolve() // sendCopy가 false일 경우 성공 처리
-
-      Promise.all([sendAdminEmail, sendCustomerEmail])
-        .then(() => {
-          alert('메일이 성공적으로 발송되었습니다.')
-        })
-        .catch(() => {
-          alert('메일 발송에 실패했습니다.')
-        })
+      sendEmails(formData)
     }
   }
 
@@ -76,80 +122,202 @@ export default function RequestForm() {
   }
 
   return (
-    <div className='w-[600px] h-[800px] p-5'>
-      <span className='text-[30px] text-[#002970] font-bold'>작업 의뢰</span>
+    <div className='w-full h-full p-5'>
+      <span className='text-[30px] text-[#002970] font-bold px-1'>
+        작업 의뢰
+      </span>
       <form
-        className='mt-3 flex flex-col gap-5 border rounded px-5 py-7'
+        className='mt-3 flex flex-col gap-4 border rounded p-5'
         onSubmit={handleSubmit}
       >
-        <div className='flex items-center justify-between gap-2'>
-          <span className='text-gray-700'>회사명/고객명</span>
-          <input
-            className='w-[420px] bg-gray-100 rounded px-2 py-1'
-            type='text'
-            name='companyName'
-            value={formData.companyName}
-            onChange={handleChange}
-          />
-        </div>
-        <div className='flex items-center justify-between gap-2'>
-          <span className='text-gray-700'>회신 이메일</span>
-          <input
-            className='w-[420px] bg-gray-100 rounded px-2 py-1'
-            type='email'
-            name='contact'
-            value={formData.contact}
-            onChange={handleChange}
-          />
-        </div>
-        <div className='flex items-center justify-between gap-2'>
-          <span className='text-gray-700'>예정 기간</span>
-          <div className='w-[420px] flex gap-2 items-center justify-between'>
-            <div className='flex gap-1 items-center'>
-              <span className='text-[0.8rem] text-gray-700'>시작일</span>
-              <input
-                className='w-[155px] bg-gray-100 rounded px-2 py-1'
-                type='date'
-                name='startDate'
-                value={formData.startDate}
-                onChange={handleChange}
-              />
-            </div>
-            <span>~</span>
-            <div className='flex gap-1 items-center'>
-              <span className='text-[0.8rem] text-gray-700'>종료일</span>
-              <input
-                className='w-[155px] bg-gray-100 rounded px-2 py-1'
-                type='date'
-                name='endDate'
-                value={formData.endDate}
-                onChange={handleChange}
-              />
-            </div>
-          </div>
-        </div>
-        <div className='flex flex-col items-start justify-between gap-2'>
-          <span className='text-gray-700'>요구 사항</span>
-          <textarea
-            className='w-full h-[200px] bg-gray-100 rounded px-3 py-2 text-black resize-none'
-            name='requirements'
-            value={formData.requirements}
-            onChange={handleChange}
-          />
-        </div>
-        <div>
-          <span className='mr-2'>도면 첨부</span>
-          <input type='file' name='file' onChange={handleFileChange} />
-        </div>
-        <div className='flex items-center gap-2'>
-          <input
-            type='checkbox'
-            name='sendCopy'
-            checked={formData.sendCopy}
-            onChange={handleChange}
-          />
-          <span className='text-gray-700'>제출 내용 메일로 받기</span>
-        </div>
+        <RequestInputText
+          title='회사명'
+          name='companyName'
+          value={formData.companyName}
+          onChange={handleChange}
+          placeholder=''
+        />
+        <RequestInputText
+          title='고객명'
+          name='customerName'
+          value={formData.customerName}
+          onChange={handleChange}
+          placeholder=''
+        />
+        <RequestInputText
+          title='연락처'
+          name='contact'
+          value={formData.contact}
+          onChange={handleChange}
+          placeholder=''
+        />
+        <RequestInputText
+          title='이메일'
+          name='email'
+          value={formData.email}
+          onChange={handleChange}
+          type='email'
+          placeholder=''
+        />
+        <RequestDate
+          label='마감 희망일'
+          name='dueDate'
+          value={formData.dueDate}
+          onChange={handleChange}
+        />
+        <RequestRadioButtons
+          label='구조검토 여부'
+          name='structureReview'
+          value={formData.structureReview}
+          onChange={handleChange}
+          type='radio'
+        />
+        <RequestRadioButtons
+          label='도면첨부 여부'
+          name='attachedDrawing'
+          value={formData.attachedDrawing}
+          onChange={handleChange}
+          type='radio'
+        />
+        <div className='w-full border-t' />
+        <span className='text-gray-700 text-lg font-bold'>시스템동바리</span>
+        <RequestInputText
+          title='설치구간'
+          name='systemDongbari.installationArea'
+          value={formData.systemDongbari.installationArea}
+          onChange={handleChange}
+          placeholder='예: 4.2m 이상/초과, 지하1층, 전기실'
+        />
+        <RequestInputText
+          title='타입'
+          name='systemDongbari.type'
+          value={formData.systemDongbari.type}
+          onChange={handleChange}
+          placeholder='예: OK타입, 의조타입'
+        />
+        <RequestInputText
+          title='멍에방향'
+          name='systemDongbari.yokeDirection'
+          value={formData.systemDongbari.yokeDirection}
+          onChange={handleChange}
+          placeholder='예: 장방향, 단방향'
+        />
+        <RequestInputText
+          title='이격거리'
+          name='systemDongbari.spacing'
+          value={formData.systemDongbari.spacing}
+          onChange={handleChange}
+          placeholder='예: 300~500mm (범위가 150mm 이상 필요)'
+        />
+        <RequestInputText
+          title='하부규정'
+          name='systemDongbari.lowerRegulation'
+          value={formData.systemDongbari.lowerRegulation}
+          onChange={handleChange}
+          placeholder='예: P2사용여부, 슬래브x, 보P2 사용'
+        />
+        <RequestInputText
+          title='구조'
+          name='systemDongbari.structureType'
+          value={formData.systemDongbari.structureType}
+          onChange={handleChange}
+          placeholder='예: RC, DECK, MAT'
+        />
+        <RequestInputText
+          title='단열재'
+          name='systemDongbari.insulation'
+          value={formData.systemDongbari.insulation}
+          onChange={handleChange}
+          placeholder='예: 선시공, 후시공, 없음'
+        />
+        <RequestInputText
+          title='발판'
+          name='systemDongbari.platform'
+          value={formData.systemDongbari.platform}
+          onChange={handleChange}
+          placeholder='예: 상단올발판, 벽체테두리발판, 없음'
+        />
+        <RequestRadioButtons
+          label='눈썹보 설치여부'
+          name='systemDongbari.eyebrowInstallation'
+          value={formData.systemDongbari.eyebrowInstallation}
+          onChange={handleChange}
+          type='radio'
+        />
+        <div className='w-full border-t' />
+        <span className='text-gray-700 text-lg font-bold'>시스템비계</span>
+        <RequestInputText
+          title='설치구간'
+          name='systemScaffold.installationArea'
+          value={formData.systemScaffold.installationArea}
+          onChange={handleChange}
+          placeholder='예: 4.2m 이상/초과, 지하1층, 전기실'
+        />
+        <RequestInputText
+          title='타입'
+          name='systemScaffold.type'
+          value={formData.systemScaffold.type}
+          onChange={handleChange}
+          placeholder='예: OK타입, 의조타입'
+        />
+        <RequestInputText
+          title='멍에방향'
+          name='systemScaffold.yokeDirection'
+          value={formData.systemScaffold.yokeDirection}
+          onChange={handleChange}
+          placeholder='예: 장방향, 단방향'
+        />
+        <RequestInputText
+          title='이격거리'
+          name='systemScaffold.spacing'
+          value={formData.systemScaffold.spacing}
+          onChange={handleChange}
+          placeholder='예: 300~500mm (범위가 150mm 이상 필요)'
+        />
+        <RequestInputText
+          title='하부규정'
+          name='systemScaffold.lowerRegulation'
+          value={formData.systemScaffold.lowerRegulation}
+          onChange={handleChange}
+          placeholder='예: P2사용여부, 슬래브x, 보P2 사용'
+        />
+        <RequestInputText
+          title='구조'
+          name='systemScaffold.structureType'
+          value={formData.systemScaffold.structureType}
+          onChange={handleChange}
+          placeholder='예: RC, DECK, MAT'
+        />
+        <RequestInputText
+          title='단열재'
+          name='systemScaffold.insulation'
+          value={formData.systemScaffold.insulation}
+          onChange={handleChange}
+          placeholder='예: 선시공, 후시공, 없음'
+        />
+        <RequestInputText
+          title='발판'
+          name='systemScaffold.platform'
+          value={formData.systemScaffold.platform}
+          onChange={handleChange}
+          placeholder='예: 상단올발판, 벽체테두리발판, 없음'
+        />
+        <RequestRadioButtons
+          label='눈썹보 설치여부'
+          name='systemScaffold.eyebrowInstallation'
+          value={formData.systemScaffold.eyebrowInstallation}
+          onChange={handleChange}
+          type='radio'
+        />
+
+        <RequestTextarea
+          label='특이사항'
+          name='specialNotes'
+          value={formData.specialNotes}
+          onChange={handleChange}
+          placeholder='특이사항 입력'
+          rows={4}
+        />
       </form>
       <div className='mt-4 flex gap-2'>
         <button
