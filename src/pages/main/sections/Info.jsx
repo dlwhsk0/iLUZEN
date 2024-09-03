@@ -29,6 +29,17 @@ export default function Info() {
       })
     }
   }
+  // const handleMouseEnter = () => {
+  //   if (scrollContainerRef.current) {
+  //     const container = scrollContainerRef.current
+  //     const targetScrollTop = container.offsetTop - 150
+  //
+  //     window.scrollTo({
+  //       top: targetScrollTop,
+  //       behavior: 'smooth',
+  //     })
+  //   }
+  // }
 
   return (
     <div
