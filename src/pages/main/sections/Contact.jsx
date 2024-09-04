@@ -1,4 +1,3 @@
-// import contact from '../../../images/contact.jpeg'
 import contact1 from '../../../images/contact1.png'
 import contact2 from '../../../images/contact2.png'
 import config from '../../../config/config'
@@ -10,7 +9,7 @@ export default function Contact() {
     window.open(
       '/request',
       '_blank',
-      'width=600,height=750,left=100,top=100,resizable=no'
+      'width=600,height=850,left=100,top=100,resizable=no'
     )
   }
 
