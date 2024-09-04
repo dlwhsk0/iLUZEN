@@ -1,47 +1,20 @@
-import React, { useState } from 'react'
-import emailjs from 'emailjs-com'
+import React, { useEffect, useState } from 'react'
 import {
   RequestInputText,
   RequestTextarea,
   RequestDate,
   RequestRadioButtons,
 } from '../../components/RequestInput'
+import { sendEmails } from '../../utils/EmailUtils'
+import { initialFormState, validateForm } from '../../utils/RequestForm'
 
 export default function RequestForm() {
-  const [formData, setFormData] = useState({
-    companyName: '', // 회사명
-    customerName: '', // 고객명
-    contact: '', // 연락처
-    email: '', // 이메일
-    dueDate: '', // 마감희망일
-    structureReview: false, // 구조검토 여부
-    attachedDrawing: false, // 도면첨부 여부
-    systemDongbari: {
-      // 시스템동바리
-      installationArea: '', // 설치구간
-      type: '', // 타입
-      yokeDirection: '', // 멍에방향
-      spacing: '', // 이격거리
-      lowerRegulation: '', // 하부규정
-      structureType: '', // 구조
-      insulation: '', // 단열재
-      platform: '', // 발판
-      eyebrowInstallation: false, // 눈썹보 설치여부
-    },
-    systemScaffold: {
-      // 시스템비계
-      installationArea: '', // 설치구간
-      type: '', // 타입
-      yokeDirection: '', // 멍에방향
-      spacing: '', // 이격거리
-      lowerRegulation: '', // 하부규정
-      structureType: '', // 구조
-      insulation: '', // 단열재
-      platform: '', // 발판
-      eyebrowInstallation: false, // 눈썹보 설치여부
-    },
-    specialNotes: '', // 특이사항
-  })
+  const [formData, setFormData] = useState(initialFormState)
+  const [errors, setErrors] = useState({}) // 에러 상태 추가
+
+  useEffect(() => {
+    setErrors(validateForm(formData))
+  }, [formData])
 
   const handleChange = (e) => {
     const { name, value, type } = e.target
@@ -62,67 +35,48 @@ export default function RequestForm() {
     }
   }
 
-  const sendEmails = (formData) => {
-    const templateParams = {
-      ...formData,
-      structureReview: formData.structureReview ? '예' : '아니요',
-      attachedDrawing: formData.attachedDrawing ? '예' : '아니요',
-      systemDongbari: {
-        ...formData.systemDongbari,
-        eyebrowInstallation: formData.systemDongbari.eyebrowInstallation
-          ? '예'
-          : '아니요',
-      },
-      systemScaffold: {
-        ...formData.systemScaffold,
-        eyebrowInstallation: formData.systemScaffold.eyebrowInstallation
-          ? '예'
-          : '아니요',
-      },
-    }
-
-    const adminEmailPromise = emailjs.send(
-      process.env.REACT_APP_EMAILJS_SERVICE_ID,
-      process.env.REACT_APP_EMAILJS_ADMIN_TEMPLATE_ID,
-      templateParams,
-      process.env.REACT_APP_EMAILJS_API_KEYS
-    )
-
-    const customerEmailPromise = emailjs.send(
-      process.env.REACT_APP_EMAILJS_SERVICE_ID,
-      process.env.REACT_APP_EMAILJS_CUSTOMER_TEMPLATE_ID,
-      templateParams,
-      process.env.REACT_APP_EMAILJS_API_KEYS
-    )
-
-    Promise.all([adminEmailPromise, customerEmailPromise])
-      .then((responses) => {
-        alert('이메일 전송이 완료되었습니다.')
-      })
-      .catch((err) => {
-        console.error('Failed to send one or more emails:', err)
-      })
-  }
-
   const handleSubmit = (e) => {
     e.preventDefault()
 
-    const confirmSubmit = window.confirm('제출하시겠습니까?')
+    if (Object.keys(errors).length === 0) {
+      const confirmSubmit = window.confirm('제출하시겠습니까?')
 
-    if (confirmSubmit) {
-      sendEmails(formData)
+      if (confirmSubmit) {
+        sendEmails(formData)
+          .then(() => {
+            alert('이메일 전송이 완료되었습니다.')
+          })
+          .catch(() => {
+            alert('이메일 전송에 실패했습니다.')
+          })
+      }
+    } else {
+      alert('필수 항목을 모두 입력해주세요.')
     }
   }
 
-  const handleClose = () => {
-    const confirmed = window.confirm('정말 창을 닫겠습니까?')
-    if (confirmed) {
-      window.close()
+  // 브라우저 창을 닫으려 할 때 경고 메시지를 표시
+  useEffect(() => {
+    const handleBeforeUnload = (e) => {
+      // 사용자에게 경고 메시지를 표시
+      const message =
+        '변경 사항이 저장되지 않을 수 있습니다. 정말 창을 닫겠습니까?'
+      e.preventDefault()
+      e.returnValue = message
+      return message
     }
+    window.addEventListener('beforeunload', handleBeforeUnload)
+    return () => {
+      window.removeEventListener('beforeunload', handleBeforeUnload)
+    }
+  }, [])
+
+  const handleClose = () => {
+    window.close()
   }
 
   return (
-    <div className='w-full h-full p-5'>
+    <div className='w-full h-full px-6 py-10'>
       <span className='text-[30px] text-[#002970] font-bold px-1'>
         작업 의뢰
       </span>
@@ -135,36 +89,61 @@ export default function RequestForm() {
           name='companyName'
           value={formData.companyName}
           onChange={handleChange}
-          placeholder=''
+          placeholder='회사명을 입력해 주세요.'
         />
+        {errors.companyName && (
+          <span className='text-red-500 mt-[-5px] text-[14px]'>
+            {errors.companyName}
+          </span>
+        )}
         <RequestInputText
           title='고객명'
           name='customerName'
           value={formData.customerName}
           onChange={handleChange}
-          placeholder=''
+          placeholder='고객명을 입력해 주세요.'
         />
+        {errors.customerName && (
+          <span className='text-red-500 mt-[-5px] text-[14px]'>
+            {errors.customerName}
+          </span>
+        )}
         <RequestInputText
           title='연락처'
           name='contact'
           value={formData.contact}
           onChange={handleChange}
-          placeholder=''
+          placeholder='연락처를 입력해주세요. (숫자만 허용, 10~15자)'
         />
+        {errors.contact && (
+          <span className='text-red-500 mt-[-5px] text-[14px]'>
+            {errors.contact}
+          </span>
+        )}
         <RequestInputText
           title='이메일'
           name='email'
           value={formData.email}
           onChange={handleChange}
           type='email'
-          placeholder=''
+          placeholder='이메일 주소를 입력해주세요.'
         />
+        {errors.email && (
+          <span className='text-red-500 mt-[-5px] text-[14px]'>
+            {errors.email}
+          </span>
+        )}
         <RequestDate
           label='마감 희망일'
           name='dueDate'
           value={formData.dueDate}
           onChange={handleChange}
         />
+        {errors.dueDate && (
+          <span className='text-red-500 mt-[-10px] text-[14px]'>
+            {errors.dueDate}
+          </span>
+        )}
         <RequestRadioButtons
           label='구조검토 여부'
           name='structureReview'
@@ -310,12 +289,13 @@ export default function RequestForm() {
           type='radio'
         />
 
+        <div className='w-full border-t' />
         <RequestTextarea
           label='특이사항'
           name='specialNotes'
           value={formData.specialNotes}
           onChange={handleChange}
-          placeholder='특이사항 입력'
+          placeholder='특이사항이 있을 경우 작성바랍니다.'
           rows={4}
         />
       </form>
