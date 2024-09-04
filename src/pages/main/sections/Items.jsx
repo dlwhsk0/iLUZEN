@@ -11,7 +11,7 @@ export default function Items() {
       id='설계품목'
       className='w-full px-[30px] sm:px-[60px] flex items-center justify-center transition-all duration-[800ms]'
     >
-      <div className='w-full max-w-[1280px] flex flex-col justify-center items-center gap-5'>
+      <div className='w-full max-w-[1280px] flex flex-col justify-center items-center gap-7'>
         <div className='w-full flex flex-col sm:items-center justify-center sm:flex-row'>
           <span className='font-bold text-[#002970] text-[30px] mr-3'>
             설계 품목 |
