@@ -1,100 +1,35 @@
-import { useState, useEffect } from 'react'
 import logo from '../images/iluzen/iluzen-logo.png'
 import { useNavigate } from 'react-router-dom'
 
-export default function Header() {
-  const [active, setActive] = useState('')
+const pages = [
+  ['company', '회사개요'],
+  ['business', '업무소개'],
+  ['design', '설계품목'],
+  ['support', '고객지원'],
+]
 
+export default function Header() {
   const navigate = useNavigate()
 
-  const handleClick = (sectionId) => {
-    setActive(sectionId)
-    const sectionElement = document.querySelector(`#${sectionId}`)
-
-    if (sectionElement) {
-      sectionElement.scrollIntoView({
-        behavior: 'smooth',
-        block: 'center', // 중앙에 위치시키기
-      })
-    }
-  }
-
-  useEffect(() => {
-    const sectionIds = [
-      '인트로',
-      '회사소개',
-      '업무소개',
-      '설계품목',
-      '고객지원',
-    ]
-
-    const handleScroll = (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setActive(entry.target.id)
-        }
-      })
-    }
-
-    const observer = new IntersectionObserver(handleScroll, {
-      threshold: 0.6, // 섹션이 60% 이상 화면에 보일 때 활성화
-    })
-
-    sectionIds.forEach((id) => {
-      const section = document.querySelector(`#${id}`)
-      if (section) {
-        observer.observe(section)
-      }
-    })
-
-    return () => {
-      sectionIds.forEach((id) => {
-        const section = document.querySelector(`#${id}`)
-        if (section) {
-          observer.unobserve(section)
-        }
-      })
-    }
-  }, [])
-
   return (
-    <div
-      className='w-full h-[60px] px-[30px] py-1 flex items-center justify-center fixed top-0 left-0 right-0 z-50 bg-white/40'
-      // style={{ boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.4)' }}
-    >
+    <div className='w-full h-[60px] py-1 flex items-center justify-center fixed top-0 left-0 right-0 z-50 bg-white/40'>
       <div className='w-full max-w-[1280px] flex flex-col sm:flex-row gap-1 items-center justify-center sm:justify-between transition-all duration-[800ms]'>
         <img
           src={logo}
-          className='w-[120px] object-contain'
+          className='w-[120px] object-contain cursor-pointer'
           alt='iluzen logo'
           onClick={() => navigate('/')}
         />
         <div className='w-full border sm:hidden' />
         <nav className='w-[400px] text-[16px] text-gray-600 flex items-center justify-between'>
-          <span
-            className={`cursor-pointer ${active === '회사소개' ? 'text-[#002970] font-bold' : ''}`}
-            onClick={() => navigate('/company')}
-          >
-            회사소개
-          </span>
-          <span
-            className={`cursor-pointer ${active === '업무소개' ? 'text-[#002970] font-bold' : ''}`}
-            onClick={() => handleClick('업무소개')}
-          >
-            업무소개
-          </span>
-          <span
-            className={`cursor-pointer ${active === '설계품목' ? 'text-[#002970] font-bold' : ''}`}
-            onClick={() => handleClick('설계품목')}
-          >
-            설계품목
-          </span>
-          <span
-            className={`cursor-pointer ${active === '고객지원' ? 'text-[#002970] font-bold' : ''}`}
-            onClick={() => handleClick('고객지원')}
-          >
-            고객지원
-          </span>
+          {pages.map((page, index) => (
+            <div
+              key={index}
+              className={`cursor-pointer hover:text-[#002970] hover:font-bold`}
+            >
+              <span onClick={() => navigate(`/${page[0]}`)}>{page[1]}</span>
+            </div>
+          ))}
         </nav>
       </div>
     </div>

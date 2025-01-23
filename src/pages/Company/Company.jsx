@@ -6,10 +6,10 @@ export default function Company() {
       <img
         src={company}
         alt='thumbnail'
-        className='w-full h-[400px] object-cover mb-[60px]'
+        className='w-full h-[400px] object-cover mb-[100px]'
       />
-      <div className='w-[1280px] h-[300px]'>
-        <div className='text-[25px] mb-[30px]'>회사개요</div>
+      <div className='w-[1280px] h-screen'>
+        <div className='text-[25px] mb-[30px] font-light'>회사개요</div>
       </div>
     </div>
   )
