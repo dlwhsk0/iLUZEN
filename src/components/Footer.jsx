@@ -1,5 +1,5 @@
 import { useCallback } from 'react'
-import logo_white from '../images/iluzen-logo-white.png'
+import logo_white from '../images/iluzen/iluzen-logo-white.png'
 import config from '../config/config'
 
 export default function Footer() {
@@ -15,7 +15,7 @@ export default function Footer() {
   }, [])
 
   return (
-    <div className='w-full h-[450px] sm:h-[500px] mt-[100px] sm:mt-[150px] px-[30px] sm:px-[60px] bg-[#181818] flex items-center justify-center transition-all duration-[800ms]'>
+    <div className='w-full h-[450px] sm:h-[500px] px-[30px] sm:px-[60px] bg-[#181818] flex items-center justify-center transition-all duration-[800ms]'>
       <div className='w-full max-w-[1280px] h-full flex items-center justify-center flex-col'>
         <div className='w-full flex flex-col gap-3 sm:flex-row sm:justify-between'>
           <img

@@ -2,8 +2,8 @@ import config from '../../../config/config'
 import WorkCard from '../../../components/WorkCard'
 import { ReactSVG } from 'react-svg'
 import arrowDown from '../../../images/arrow-down.svg'
-import workFolder from '../../../images/work-folder.png'
-import workCertification from '../../../images/work-certification.png'
+import workFolder from '../../../images/version2/work-folder.png'
+import workCertification from '../../../images/version2/work-certification.png'
 
 export default function Work() {
   return (
