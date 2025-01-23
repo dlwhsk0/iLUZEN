@@ -66,7 +66,7 @@ export default function Header() {
           alt='iluzen logo'
         />
         <div className='w-full border sm:hidden' />
-        <nav className='w-full sm:w-[35%] sm:min-w-[300px] text-[16px] text-gray-600 flex items-center justify-between'>
+        <nav className='w-[400px] text-[16px] text-gray-600 flex items-center justify-between'>
           <span
             className={`cursor-pointer ${active === '회사소개' ? 'text-[#002970] font-bold' : ''}`}
             onClick={() => handleClick('회사소개')}

@@ -10,9 +10,9 @@ const config = {
   },
   contactInfo: {
     representative: '이은지',
-    email: 'iLUZEN@iluzen.com',
+    email: 'iluzen777@naver.com',
     phone: '02-123-4567',
-    businessNumber: '190-12-34567',
+    businessNumber: '807-81-02790',
     address: '.',
   },
 }

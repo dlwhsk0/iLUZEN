@@ -33,11 +33,11 @@ export default function Intro() {
       </div>
       <div className='bg-[#1A1C1E] w-full h-[280px] pt-[60px] flex flex-col items-center justify-between gap-[20px]'>
         <div className='flex items-center justify-center gap-[100px]'>
-          <IntroIcon icon={icon1} text={'시 스 템 도 면'} />
-          <IntroIcon icon={icon2} text={'구 조 검 토'} />
-          <IntroIcon icon={icon3} text={'현 장 상 담'} />
-          <IntroIcon icon={icon4} text={'가 설 재 도 면'} />
-          <IntroIcon icon={icon5} text={'맞 춤 양 식 제 작'} />
+          <IntroIcon icon={icon1} text={'시스템도면'} />
+          <IntroIcon icon={icon2} text={'구조검토'} />
+          <IntroIcon icon={icon3} text={'현장상담'} />
+          <IntroIcon icon={icon4} text={'가설재도면'} />
+          <IntroIcon icon={icon5} text={'맞춤양식제작'} />
         </div>
         <img
           src={arrowDown}

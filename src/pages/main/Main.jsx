@@ -125,7 +125,7 @@ export default function Main() {
         </div>
 
         {/* 캐러셀 */}
-        <div className='w-full h-[500px] bg-[#F2F1F1] px-[100px]'>
+        <div className='w-full h-[500px] bg-[#F2F1F1]'>
           <Carousel />
         </div>
       </div>

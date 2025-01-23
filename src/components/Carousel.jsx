@@ -3,26 +3,28 @@ import { Navigation, Pagination, Autoplay } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
+import '../styles/swiper-custom.css' // Swiper 스타일 커스텀 파일 추가
+
 import design1 from '../assets/carousel/design-1.png'
 import design2 from '../assets/carousel/design-2.png'
 import design3 from '../assets/carousel/design-3.png'
 
-const images = [design1, design2, design3, design1, design2, design3] // 무한 루프 효과용 중복 추가
+const images = [design1, design2, design3, design1, design2, design3]
 
 export default function Carousel() {
   return (
-    <div className='w-full h-full px-10 relative'>
+    <div className='w-[1280px] h-full relative mx-auto'>
       {/* Swiper 캐러셀 */}
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
-        navigation={{ prevEl: '.custom-prev', nextEl: '.custom-next' }} // 네비게이션 아이콘 커스텀 적용
-        pagination={{ clickable: true }}
+        navigation={{ prevEl: '.custom-prev', nextEl: '.custom-next' }}
+        pagination={{ clickable: true, el: '.swiper-pagination' }} // 페이지네이션 클래스 적용
         autoplay={{ delay: 3000, disableOnInteraction: false }}
         loop={true}
         slidesPerView={3}
         spaceBetween={20}
         centeredSlides={false}
-        className='w-[1280px] h-full'
+        className='w-full h-full'
       >
         {images.map((src, index) => (
           <SwiperSlide
@@ -36,37 +38,39 @@ export default function Carousel() {
             />
           </SwiperSlide>
         ))}
-
-        {/* 커스텀 네비게이션 버튼 (얇은 SVG 아이콘 적용) */}
-        <div className='custom-prev absolute left-3 top-1/2 transform -translate-y-1/2 cursor-pointer z-10'>
-          <svg
-            width='30'
-            height='30'
-            viewBox='0 0 24 24'
-            fill='none'
-            stroke='#BCBCBC'
-            strokeWidth='1.5'
-            strokeLinecap='round'
-            strokeLinejoin='round'
-          >
-            <path d='M15 18l-6-6 6-6' />
-          </svg>
-        </div>
-        <div className='custom-next absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer z-10'>
-          <svg
-            width='30'
-            height='30'
-            viewBox='0 0 24 24'
-            fill='none'
-            stroke='#BCBCBC'
-            strokeWidth='1.5'
-            strokeLinecap='round'
-            strokeLinejoin='round'
-          >
-            <path d='M9 18l6-6-6-6' />
-          </svg>
-        </div>
       </Swiper>
+
+      {/* Swiper 페이지네이션 (커스텀 스타일 적용) */}
+      <div className='swiper-pagination' />
+      {/* 커스텀 네비게이션 버튼 (얇은 SVG 아이콘 적용) */}
+      <div className='custom-prev absolute left-2 top-1/2 transform -translate-y-1/2 cursor-pointer z-10'>
+        <svg
+          width='50'
+          height='50'
+          viewBox='0 0 24 24'
+          fill='none'
+          stroke='#BCBCBC'
+          strokeWidth='1.5'
+          strokeLinecap='round'
+          strokeLinejoin='round'
+        >
+          <path d='M15 18l-6-6 6-6' />
+        </svg>
+      </div>
+      <div className='custom-next absolute right-2 top-1/2 transform -translate-y-1/2 cursor-pointer z-10'>
+        <svg
+          width='50'
+          height='50'
+          viewBox='0 0 24 24'
+          fill='none'
+          stroke='#BCBCBC'
+          strokeWidth='1.5'
+          strokeLinecap='round'
+          strokeLinejoin='round'
+        >
+          <path d='M9 18l6-6-6-6' />
+        </svg>
+      </div>
     </div>
   )
 }
