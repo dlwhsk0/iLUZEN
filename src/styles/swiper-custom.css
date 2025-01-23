@@ -11,8 +11,8 @@
 
 /* Swiper 페이지네이션 크기 조정 */
 .swiper-pagination-bullet {
-    width: 8px;
-    height: 8px;
+    width: 10px;
+    height: 10px;
     margin: 0 5px;
 }
 

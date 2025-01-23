@@ -1,8 +1,11 @@
 import { useState, useEffect } from 'react'
 import logo from '../images/iluzen/iluzen-logo.png'
+import { useNavigate } from 'react-router-dom'
 
 export default function Header() {
   const [active, setActive] = useState('')
+
+  const navigate = useNavigate()
 
   const handleClick = (sectionId) => {
     setActive(sectionId)
@@ -62,14 +65,15 @@ export default function Header() {
       <div className='w-full max-w-[1280px] flex flex-col sm:flex-row gap-1 items-center justify-center sm:justify-between transition-all duration-[800ms]'>
         <img
           src={logo}
-          className='w-[120px] sm:w-[140px] object-contain'
+          className='w-[120px] object-contain'
           alt='iluzen logo'
+          onClick={() => navigate('/')}
         />
         <div className='w-full border sm:hidden' />
         <nav className='w-[400px] text-[16px] text-gray-600 flex items-center justify-between'>
           <span
             className={`cursor-pointer ${active === '회사소개' ? 'text-[#002970] font-bold' : ''}`}
-            onClick={() => handleClick('회사소개')}
+            onClick={() => navigate('/company')}
           >
             회사소개
           </span>

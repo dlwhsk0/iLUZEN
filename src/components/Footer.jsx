@@ -4,7 +4,7 @@ import config from '../config/config'
 
 export default function Footer() {
   return (
-    <div className='w-full h-[100px] bg-[#181818] flex items-center justify-center pt-4'>
+    <div className='w-full h-[120px] bg-[#181818] flex items-center justify-center pt-4'>
       <div className='w-[1280px] h-full flex items-center'>
         <img
           // src={logo_white}

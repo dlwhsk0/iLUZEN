@@ -4,7 +4,7 @@ import Footer from './components/Footer'
 
 export default function Layout({ children }) {
   return (
-    <div className='relative mt-[60px]'>
+    <div className='w-full h-full relative pt-[60px]'>
       <Header />
       <main>{children}</main>
       <Footer />

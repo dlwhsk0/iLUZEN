@@ -4,6 +4,7 @@ import Main from './pages/main/Main'
 import './App.css'
 import Layout from './Layout'
 import Contact from './pages/main/sections/Contact'
+import Company from './pages/Company/Company'
 
 export default function App() {
   return (
@@ -18,15 +19,15 @@ export default function App() {
           }
         />
         <Route
-          path='/company-info'
+          path='/company'
           element={
             <Layout>
-              <Contact />
+              <Company />
             </Layout>
           }
         />
         <Route
-          path='/work-info'
+          path='/work'
           element={
             <Layout>
               <Contact />
