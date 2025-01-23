@@ -1,10 +1,9 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import Header from './components/Header'
 import Main from './pages/main/Main'
-import Footer from './components/Footer'
-import Request from './pages/request/Request'
 import './App.css'
+import Layout from './Layout'
+import Contact from './pages/main/sections/Contact'
 
 export default function App() {
   return (
@@ -13,14 +12,43 @@ export default function App() {
         <Route
           path='/'
           element={
-            <div className='relative'>
-              <Header />
+            <Layout>
               <Main />
-              <Footer />
-            </div>
+            </Layout>
           }
         />
-        <Route path='/request' element={<Request />} />
+        <Route
+          path='/company-info'
+          element={
+            <Layout>
+              <Contact />
+            </Layout>
+          }
+        />
+        <Route
+          path='/work-info'
+          element={
+            <Layout>
+              <Contact />
+            </Layout>
+          }
+        />
+        <Route
+          path='/items'
+          element={
+            <Layout>
+              <Contact />
+            </Layout>
+          }
+        />
+        <Route
+          path='/contact'
+          element={
+            <Layout>
+              <Contact />
+            </Layout>
+          }
+        />
       </Routes>
     </Router>
   )
