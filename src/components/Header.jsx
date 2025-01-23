@@ -56,8 +56,8 @@ export default function Header() {
 
   return (
     <div
-      className='w-full sm:h-[45px] px-[30px] sm:px-[60px] py-1 flex items-center justify-center fixed top-0 left-0 right-0 z-50 bg-white'
-      style={{ boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.4)' }}
+      className='w-full h-[60px] px-[30px] py-1 flex items-center justify-center fixed top-0 left-0 right-0 z-50 bg-white/40'
+      // style={{ boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.4)' }}
     >
       <div className='w-full max-w-[1280px] flex flex-col sm:flex-row gap-1 items-center justify-center sm:justify-between transition-all duration-[800ms]'>
         <img
