@@ -1,4 +1,3 @@
-// import logo_white from '../images/iluzen/iluzen-logo-white.png'
 import logoSeparation from '../assets/iluzen/logo-separation.png'
 import config from '../config/config'
 
@@ -7,8 +6,6 @@ export default function Footer() {
     <div className='w-full h-[120px] bg-[#181818] flex items-center justify-center'>
       <div className='w-[1280px] h-full flex items-center'>
         <img
-          // src={logo_white}
-          // className='w-[150px] object-contain mr-[80px]'
           src={logoSeparation}
           className='w-[120px] object-contain mr-[80px]'
           alt='iluzen logo'
