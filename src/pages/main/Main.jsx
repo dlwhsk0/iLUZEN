@@ -92,7 +92,7 @@ export default function Main() {
           <span className='text-[30px] font-light'>iLUZEN Design</span>
         </div>
         {/* 캐러셀 */}
-        <div className='w-full h-[500px] bg-[#F2F1F1]'>
+        <div className='w-full h-[450px] bg-[#F2F1F1]'>
           <Carousel />
         </div>
       </div>

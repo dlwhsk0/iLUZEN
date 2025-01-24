@@ -1,15 +1,16 @@
 import logo from '../assets/iluzen/iluzen-logo.png'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 
 const pages = [
   ['company', '회사개요'],
-  ['business', '업무소개'],
+  ['business', '사업분야'],
   ['design', '설계품목'],
   ['support', '고객지원'],
 ]
 
 export default function Header() {
   const navigate = useNavigate()
+  const location = useLocation() // 현재 경로 가져오기
 
   return (
     <div className='w-full h-[60px] py-1 flex items-center justify-center fixed top-0 left-0 right-0 z-50 bg-white/40'>
@@ -22,14 +23,22 @@ export default function Header() {
         />
         <div className='w-full border sm:hidden' />
         <nav className='w-[400px] text-[16px] text-gray-600 flex items-center justify-between'>
-          {pages.map((page, index) => (
-            <div
-              key={index}
-              className={`cursor-pointer hover:text-[#002970] hover:font-bold`}
-            >
-              <span onClick={() => navigate(`/${page[0]}`)}>{page[1]}</span>
-            </div>
-          ))}
+          {pages.map(([path, label], index) => {
+            const isActive = location.pathname === `/${path}` // 현재 경로 확인
+            return (
+              <div
+                key={index}
+                className={`cursor-pointer transition-colors ${
+                  isActive
+                    ? 'text-[#002970] font-bold'
+                    : 'hover:text-[#002970] hover:font-bold'
+                }`}
+                onClick={() => navigate(`/${path}`)}
+              >
+                <span>{label}</span>
+              </div>
+            )
+          })}
         </nav>
       </div>
     </div>

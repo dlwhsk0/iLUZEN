@@ -21,7 +21,7 @@ export default function Carousel() {
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         navigation={{ prevEl: '.custom-prev', nextEl: '.custom-next' }}
-        pagination={{ clickable: true, el: '.swiper-pagination' }} // 페이지네이션 클래스 적용
+        pagination={{ clickable: true, el: '.swiper-pagination' }}
         autoplay={{ delay: 3000, disableOnInteraction: false }}
         loop={true}
         slidesPerView={3}
