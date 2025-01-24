@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Main from './pages/main/Main'
 import './App.css'
 import Layout from './Layout'
-import Contact from './pages/main/sections/Contact'
 import Company from './pages/Company/Company'
 
 export default function App() {
@@ -26,30 +25,9 @@ export default function App() {
             </Layout>
           }
         />
-        <Route
-          path='/work'
-          element={
-            <Layout>
-              <Contact />
-            </Layout>
-          }
-        />
-        <Route
-          path='/items'
-          element={
-            <Layout>
-              <Contact />
-            </Layout>
-          }
-        />
-        <Route
-          path='/contact'
-          element={
-            <Layout>
-              <Contact />
-            </Layout>
-          }
-        />
+        <Route path='/work' element={<Layout></Layout>} />
+        <Route path='/items' element={<Layout></Layout>} />
+        <Route path='/contact' element={<Layout></Layout>} />
       </Routes>
     </Router>
   )

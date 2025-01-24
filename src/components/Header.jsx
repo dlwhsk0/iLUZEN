@@ -1,4 +1,4 @@
-import logo from '../images/iluzen/iluzen-logo.png'
+import logo from '../assets/iluzen/iluzen-logo.png'
 import { useNavigate } from 'react-router-dom'
 
 const pages = [

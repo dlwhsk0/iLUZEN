@@ -1,5 +1,5 @@
 // import logo_white from '../images/iluzen/iluzen-logo-white.png'
-import logoSeparation from '../images/iluzen/logo-separation.png'
+import logoSeparation from '../assets/iluzen/logo-separation.png'
 import config from '../config/config'
 
 export default function Footer() {

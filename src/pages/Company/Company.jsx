@@ -1,4 +1,4 @@
-import company from '../../images/company.jpg'
+import company from '../../assets/company.jpg'
 
 export default function Company() {
   return (
