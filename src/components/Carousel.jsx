@@ -34,11 +34,13 @@ export default function Carousel() {
             key={index}
             className='w-full h-full flex justify-center items-center'
           >
-            <img
-              src={src}
-              alt={`Design ${index + 1}`}
-              className='h-full object-contain'
-            />
+            <div className='bg-white'>
+              <img
+                src={src}
+                alt={`Design ${index + 1}`}
+                className='h-full object-contain my-[10px]'
+              />
+            </div>
           </SwiperSlide>
         ))}
       </Swiper>

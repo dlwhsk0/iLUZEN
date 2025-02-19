@@ -2,13 +2,13 @@ import Timeline from '../../components/Timeline'
 
 export default function Company() {
   return (
-    <div className='w-[1280px] h-screen'>
+    <div className='w-[1000px] h-full mx-auto'>
       <div className='text-[25px] mb-[60px] font-light'>회사개요</div>
       <div className='w-full flex justify-between'>
         <div className='w-[40%]'>
           <Timeline />
         </div>
-        <div className='w-[50%] leading-loose'>
+        <div className='w-[57%] text-[15px] leading-loose'>
           주식회사 이루젠은 가설자재 설계도면 분야에서 안전과 품질을 최우선으로
           삼고 있습니다.
           <br />

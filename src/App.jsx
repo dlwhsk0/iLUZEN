@@ -8,6 +8,8 @@ import Business from './pages/business/Business'
 import PageLayout from './pages/PageLayout'
 import company from './assets/company.jpg'
 import business from './assets/business.jpg'
+import design from './assets/design.jpg'
+import support from './assets/support.jpg'
 import Design from './pages/design/Design'
 import Support from './pages/support/Support'
 
@@ -47,7 +49,7 @@ export default function App() {
           path='/design'
           element={
             <Layout>
-              <PageLayout thumnail={business}>
+              <PageLayout thumnail={design}>
                 <Design />
               </PageLayout>
             </Layout>
@@ -57,7 +59,7 @@ export default function App() {
           path='/support'
           element={
             <Layout>
-              <PageLayout thumnail={business}>
+              <PageLayout thumnail={support}>
                 <Support />
               </PageLayout>
             </Layout>

@@ -1,10 +1,10 @@
 <svg width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M0 11.7826H45" stroke="white" stroke-opacity="0.5"/>
-<path d="M0 32.1739H45" stroke="white" stroke-opacity="0.5"/>
-<path d="M12.3477 45L12.3477 -1.60933e-06" stroke="white" stroke-opacity="0.5"/>
-<path d="M32.5654 45L32.5654 -1.60933e-06" stroke="white" stroke-opacity="0.5"/>
-<circle cx="12.3478" cy="11.7826" r="2.76087" stroke="white" stroke-opacity="0.5"/>
-<circle cx="12.3478" cy="32.1739" r="2.76087" stroke="white" stroke-opacity="0.5"/>
-<circle cx="32.5651" cy="11.7826" r="2.76087" stroke="white" stroke-opacity="0.5"/>
-<circle cx="32.5651" cy="32.1739" r="2.76087" stroke="white" stroke-opacity="0.5"/>
+<path d="M0 11.7826H45" stroke="currentColor"/>
+<path d="M0 32.1739H45" stroke="currentColor"/>
+<path d="M12.3477 45L12.3477 -1.60933e-06" stroke="currentColor"/>
+<path d="M32.5654 45L32.5654 -1.60933e-06" stroke="currentColor"/>
+<circle cx="12.3478" cy="11.7826" r="2.76087" stroke="currentColor"/>
+<circle cx="12.3478" cy="32.1739" r="2.76087" stroke="currentColor"/>
+<circle cx="32.5651" cy="11.7826" r="2.76087" stroke="currentColor"/>
+<circle cx="32.5651" cy="32.1739" r="2.76087" stroke="currentColor"/>
 </svg>

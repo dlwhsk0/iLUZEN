@@ -7,9 +7,9 @@ const timelineData = [
 
 export default function Timeline() {
   return (
-    <div className='relative ml-8'>
+    <div className='w-full relative ml-8'>
       {/* 전체 연한 세로선 */}
-      <div className='absolute left-[4px] top-4 w-[2px] h-[300px] bg-[#E3E3E3]'></div>
+      <div className='absolute left-[4px] top-4 w-[2px] h-[250px] bg-[#E3E3E3]'></div>
 
       {timelineData.map((item, index) => (
         <div key={index} className='relative flex items-center mb-[35px]'>
@@ -22,9 +22,9 @@ export default function Timeline() {
           )}
 
           {/* 날짜 & 텍스트 */}
-          <div className='flex items-center gap-[25px] ml-[35px]'>
+          <div className='flex items-center gap-[15px] ml-[20px]'>
             <span className='font-light text-gray-700'>{item.date}</span>
-            <span className=''>{item.text}</span>
+            <span className='text-[15px]'>{item.text}</span>
           </div>
         </div>
       ))}
