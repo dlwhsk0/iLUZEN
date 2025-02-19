@@ -12,6 +12,7 @@ import main2 from '../..//assets/mainInfo/main2.jpg'
 import Carousel from '../../components/Carousel'
 import main1 from '../../assets/mainInfo/main1.jpg'
 import { ServiceBox } from '../../components/ServiceBox'
+import { useState } from 'react'
 
 const introIcons = [
   ['시스템도면', icon1],
@@ -41,6 +42,7 @@ const serviceItems = [
 ]
 
 export default function Main() {
+  const [hovered, setHovered] = useState(null)
   return (
     <div className='w-full h-full flex flex-col items-center gap-[200px]'>
       {/* 인트로 이미지 및 아이콘 */}
@@ -78,10 +80,10 @@ export default function Main() {
       <div className='w-[1000px] mx-auto'>
         {/* 타이틀 */}
         <div className='text-[30px] font-light mb-[30px]'>iLUZEN Service</div>
-        {/* 서비스 박스 */}
-        <div className='w-full h-[450px] flex gap-2'>
-          {/* 주식회사 이루젠 (왼쪽 큰 박스) */}
-          <div className='relative w-[54%] h-full rounded-lg overflow-hidden'>
+
+        <div className='w-full h-[450px] grid grid-cols-9 gap-3 transition-all duration-300'>
+          {/* 왼쪽 큰 박스 */}
+          <div className='h-full col-span-5 text-white rounded-lg flex flex-col justify-center items-center shadow-lg overflow-hidden'>
             <ServiceBox
               src={main1}
               alt={serviceItems[0][0]}
@@ -89,9 +91,14 @@ export default function Main() {
               content={serviceItems[0][1]}
             />
           </div>
-          {/* 핵심 역량, 제공 서비스 (중앙 박스) */}
-          <div className='h-full relative w-[21%] h-full flex flex-col items-center justify-center gap-2'>
-            <div className='h-full relative rounded-lg overflow-hidden'>
+
+          {/* 오른쪽 작은 박스들 */}
+          <div className='h-[450px] col-span-4 grid grid-cols-2 grid-rows-2 gap-3 relative'>
+            <div
+              className={`rounded-lg shadow-lg flex items-center justify-center text-center transition-all duration-300 cursor-pointer overflow-hidden transition-all duration-300 ${hovered === 1 ? 'absolute w-full h-full top-0 left-0 z-10' : 'relative'}`}
+              onMouseEnter={() => setHovered(1)}
+              onMouseLeave={() => setHovered(null)}
+            >
               <ServiceBox
                 src={main2}
                 alt={serviceItems[1][0]}
@@ -99,7 +106,23 @@ export default function Main() {
                 content={serviceItems[1][1]}
               />
             </div>
-            <div className='h-full relative rounded-lg overflow-hidden'>
+            <div
+              className={`rounded-lg shadow-lg flex items-center justify-center text-center row-span-2 transition-all duration-300 cursor-pointer overflow-hidden transition-all duration-300 ${hovered === 2 ? 'absolute w-full h-full top-0 left-0 z-10' : 'relative'}`}
+              onMouseEnter={() => setHovered(2)}
+              onMouseLeave={() => setHovered(null)}
+            >
+              <ServiceBox
+                src={main4}
+                alt={serviceItems[3][0]}
+                title={serviceItems[3][0]}
+                content={serviceItems[3][1]}
+              />
+            </div>
+            <div
+              className={`rounded-lg shadow-lg flex items-center justify-center text-center transition-all duration-300 cursor-pointer overflow-hidden transition-all duration-300 ${hovered === 3 ? 'absolute w-full h-full top-0 left-0 z-10' : 'relative'}`}
+              onMouseEnter={() => setHovered(3)}
+              onMouseLeave={() => setHovered(null)}
+            >
               <ServiceBox
                 src={main3}
                 alt={serviceItems[2][0]}
@@ -107,15 +130,6 @@ export default function Main() {
                 content={serviceItems[2][1]}
               />
             </div>
-          </div>
-          {/* 비전 및 목표 (오른쪽 길게 확장된 박스) */}
-          <div className='relative w-[21%] h-full rounded-lg overflow-hidden'>
-            <ServiceBox
-              src={main4}
-              alt={serviceItems[3][0]}
-              title={serviceItems[3][0]}
-              content={serviceItems[3][1]}
-            />
           </div>
         </div>
       </div>
