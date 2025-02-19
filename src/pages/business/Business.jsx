@@ -17,7 +17,7 @@ const items = [
 
 export default function Business() {
   return (
-    <div className='w-[1000px] h-full mx-auto'>
+    <div className='w-[1280px] h-full mx-auto'>
       <div className='text-[25px] mb-[60px] font-light'>사업분야</div>
       {/*<div className='w-full h-[480px] mx-auto grid grid-cols-2 grid-rows-2 gap-[20px]'>*/}
       {/*  {items.map((item, index) => (*/}
@@ -47,7 +47,7 @@ export default function Business() {
       {/*    </div>*/}
       {/*  ))}*/}
       {/*</div>*/}
-      <div className='w-full h-[480px] mx-auto grid grid-cols-2 grid-rows-2 gap-[20px]'>
+      <div className='w-full h-[480px] mx-auto grid grid-cols-2 grid-rows-2 gap-x-[30px] gap-y-[20px]'>
         {items.map((item, index) => (
           <div
             key={index}

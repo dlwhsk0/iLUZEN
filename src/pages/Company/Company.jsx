@@ -2,7 +2,7 @@ import Timeline from '../../components/Timeline'
 
 export default function Company() {
   return (
-    <div className='w-[1000px] h-full mx-auto'>
+    <div className='w-[1280px] h-full mx-auto'>
       <div className='text-[25px] mb-[60px] font-light'>회사개요</div>
       <div className='w-full flex justify-between'>
         <div className='w-[40%]'>

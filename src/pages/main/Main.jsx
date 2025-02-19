@@ -77,11 +77,11 @@ export default function Main() {
         </div>
       </div>
       {/* 이루젠 서비스 */}
-      <div className='w-[1000px] mx-auto'>
+      <div className='w-[1280px] mx-auto'>
         {/* 타이틀 */}
         <div className='text-[30px] font-light mb-[30px]'>iLUZEN Service</div>
 
-        <div className='w-full h-[450px] grid grid-cols-9 gap-3 transition-all duration-300'>
+        <div className='w-full h-[550px] grid grid-cols-9 gap-3 transition-all duration-300'>
           {/* 왼쪽 큰 박스 */}
           <div className='h-full col-span-5 text-white rounded-lg flex flex-col justify-center items-center shadow-lg overflow-hidden'>
             <ServiceBox
@@ -93,7 +93,7 @@ export default function Main() {
           </div>
 
           {/* 오른쪽 작은 박스들 */}
-          <div className='h-[450px] col-span-4 grid grid-cols-2 grid-rows-2 gap-3 relative'>
+          <div className='h-[550px] col-span-4 grid grid-cols-2 grid-rows-2 gap-3 relative'>
             <div
               className={`rounded-lg shadow-lg flex items-center justify-center text-center transition-all duration-300 cursor-pointer overflow-hidden transition-all duration-300 ${hovered === 1 ? 'absolute w-full h-full top-0 left-0 z-10' : 'relative'}`}
               onMouseEnter={() => setHovered(1)}
@@ -137,7 +137,7 @@ export default function Main() {
       {/* 이루젠 디자인 */}
       <div className='w-full mb-[200px] flex flex-col items-center justify-center'>
         {/* 타이틀 */}
-        <div className='w-[1000px] mb-[30px]'>
+        <div className='w-[1280px] mb-[30px]'>
           <span className='text-[30px] font-light'>iLUZEN Design</span>
         </div>
         {/* 캐러셀 */}
