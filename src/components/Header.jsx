@@ -30,7 +30,7 @@ export default function Header() {
                 key={index}
                 className={`cursor-pointer ${
                   isActive
-                    ? 'text-[#002970] font-bold'
+                    ? 'text-[#002970] font-bold relative after:content-[""] after:absolute after:w-full after:h-[2.5px] after:bg-[#002970] after:bottom-[-6px] after:left-0'
                     : 'text-gray-600 hover:text-[#002970] hover:font-bold relative after:content-[""] after:absolute after:w-0 after:h-[2.5px] after:bg-[#002970] after:bottom-[-6px] after:left-0 hover:after:w-full after:transition-all after:duration-500'
                 }`}
                 onClick={() => navigate(`/${path}`)}
