@@ -1,5 +1,5 @@
 import intro from '../../assets/intro.webp'
-import IntroIcon from '../../components/introIcon'
+import IntroIcon from '../../components/IntroIcon'
 import icon1 from '../../assets/icons/icon-1.svg'
 import icon2 from '../../assets/icons/icon-2.svg'
 import icon3 from '../../assets/icons/icon-3.svg'

@@ -5,7 +5,7 @@ import main4 from '../../assets/mainInfo/main4.webp'
 
 export const mainContent = {
   hero: {
-    title: 'Building Confidence Through Expert Scaffold Design',
+    title: '"Building Confidence Through Expert Scaffold Design"',
     subtitle: '',
     description: '',
     cta: {
@@ -52,7 +52,7 @@ export const mainContent = {
   },
   design: {
     title: 'iLUZEN Design',
-    description: '최적화된 설계 솔루션으로 건설 현장의 안전과 효율을 높입니다.',
+    description: '',
     link: '',
   },
   introIcons: [
