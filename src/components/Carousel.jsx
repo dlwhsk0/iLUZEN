@@ -1,20 +1,56 @@
+import { useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination, Autoplay } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import '../styles/swiper-custom.css' // Swiper 스타일 커스텀 파일 추가
+import ImageModal from './ImageModal'
 
-import plan1 from '../assets/carousel/plan-1.webp'
-import plan2 from '../assets/carousel/plan-2.webp'
-import plan3 from '../assets/carousel/plan-3.webp'
-import plan4 from '../assets/carousel/plan-4.webp'
-import section1 from '../assets/carousel/section-1.webp'
-import section2 from '../assets/carousel/section-2.webp'
+// 캐러셀용 webp 이미지
+import plan1Webp from '../assets/carousel/plan-1.webp'
+import plan2Webp from '../assets/carousel/plan-2.webp'
+import plan3Webp from '../assets/carousel/plan-3.webp'
+import plan4Webp from '../assets/carousel/plan-4.webp'
+import section1Webp from '../assets/carousel/section-1.webp'
+import section2Webp from '../assets/carousel/section-2.webp'
 
-const images = [plan1, plan2, plan3, plan4, section1, section2]
+// 모달용 원본 이미지
+import plan1Original from '../assets/carousel/plan-1.png'
+import plan2Original from '../assets/carousel/plan-2.png'
+import plan3Original from '../assets/carousel/plan-3.png'
+import plan4Original from '../assets/carousel/plan-4.png'
+import section1Original from '../assets/carousel/section-1.png'
+import section2Original from '../assets/carousel/section-2.png'
+
+const webpImages = [
+  plan1Webp,
+  plan2Webp,
+  plan3Webp,
+  plan4Webp,
+  section1Webp,
+  section2Webp,
+]
+const originalImages = [
+  plan1Original,
+  plan2Original,
+  plan3Original,
+  plan4Original,
+  section1Original,
+  section2Original,
+]
 
 export default function Carousel() {
+  const [selectedImageIndex, setSelectedImageIndex] = useState(null)
+
+  const handleImageClick = (index) => {
+    setSelectedImageIndex(index)
+  }
+
+  const handleCloseModal = () => {
+    setSelectedImageIndex(null)
+  }
+
   return (
     <div className='w-[1280px] h-full relative mx-auto'>
       {/* Swiper 캐러셀 */}
@@ -29,12 +65,15 @@ export default function Carousel() {
         centeredSlides={false}
         className='w-full h-full'
       >
-        {images.map((src, index) => (
+        {webpImages.map((src, index) => (
           <SwiperSlide
             key={index}
             className='w-full h-full flex justify-center items-center'
           >
-            <div className='bg-white'>
+            <div
+              className='bg-white cursor-pointer'
+              onClick={() => handleImageClick(index)}
+            >
               <img
                 src={src}
                 alt={`Design ${index + 1}`}
@@ -47,6 +86,14 @@ export default function Carousel() {
           </SwiperSlide>
         ))}
       </Swiper>
+
+      {/* 모달 */}
+      {selectedImageIndex !== null && (
+        <ImageModal
+          imageSrc={originalImages[selectedImageIndex]}
+          onClose={handleCloseModal}
+        />
+      )}
 
       {/* Swiper 페이지네이션 (커스텀 스타일 적용) */}
       <div className='swiper-pagination' />
