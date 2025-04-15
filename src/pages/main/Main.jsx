@@ -95,7 +95,7 @@ export default function Main() {
           {/* 오른쪽 작은 박스들 */}
           <div className='h-[550px] col-span-4 grid grid-cols-2 grid-rows-2 gap-3 relative'>
             <div
-              className={`rounded-lg shadow-lg flex items-center justify-center text-center transition-all duration-300 cursor-pointer overflow-hidden transition-all duration-300 ${hovered === 1 ? 'absolute w-full h-full top-0 left-0 z-10' : 'relative'}`}
+              className={`rounded-lg shadow-lg flex items-center justify-center text-center transition-all duration-[800ms] cursor-pointer overflow-hidden group ${hovered === 1 ? 'absolute w-full h-full top-0 left-0 z-10' : 'relative'}`}
               onMouseEnter={() => setHovered(1)}
               onMouseLeave={() => setHovered(null)}
             >
@@ -107,7 +107,7 @@ export default function Main() {
               />
             </div>
             <div
-              className={`rounded-lg shadow-lg flex items-center justify-center text-center row-span-2 transition-all duration-300 cursor-pointer overflow-hidden transition-all duration-300 ${hovered === 2 ? 'absolute w-full h-full top-0 left-0 z-10' : 'relative'}`}
+              className={`rounded-lg shadow-lg flex items-center justify-center text-center row-span-2 transition-all duration-[800ms] cursor-pointer overflow-hidden group ${hovered === 2 ? 'absolute w-full h-full top-0 left-0 z-10' : 'relative'}`}
               onMouseEnter={() => setHovered(2)}
               onMouseLeave={() => setHovered(null)}
             >
@@ -119,7 +119,7 @@ export default function Main() {
               />
             </div>
             <div
-              className={`rounded-lg shadow-lg flex items-center justify-center text-center transition-all duration-300 cursor-pointer overflow-hidden transition-all duration-300 ${hovered === 3 ? 'absolute w-full h-full top-0 left-0 z-10' : 'relative'}`}
+              className={`rounded-lg shadow-lg flex items-center justify-center text-center transition-all duration-[800ms] cursor-pointer overflow-hidden group ${hovered === 3 ? 'absolute w-full h-full top-0 left-0 z-10' : 'relative'}`}
               onMouseEnter={() => setHovered(3)}
               onMouseLeave={() => setHovered(null)}
             >
