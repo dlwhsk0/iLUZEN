@@ -1,8 +1,8 @@
 import ItemCard from '../../components/ItemCard'
-import systemDongbari from '../../assets/design/systemdongbari.png'
-import systemBigye from '../../assets/design/systembigye.png'
-import pipeSupport from '../../assets/design/pipesupport.png'
-import ganggwanBigye from '../../assets/design/ganggwanbigye.png'
+import systemDongbari from '../../assets/design/systemdongbari.webp'
+import systemBigye from '../../assets/design/systembigye.webp'
+import pipeSupport from '../../assets/design/pipesupport.webp'
+import ganggwanBigye from '../../assets/design/ganggwanbigye.webp'
 
 export default function Design() {
   return (

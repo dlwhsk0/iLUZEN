@@ -5,12 +5,12 @@ import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import '../styles/swiper-custom.css' // Swiper 스타일 커스텀 파일 추가
 
-import plan1 from '../assets/carousel/plan-1.png'
-import plan2 from '../assets/carousel/plan-2.png'
-import plan3 from '../assets/carousel/plan-3.png'
-import plan4 from '../assets/carousel/plan-4.png'
-import section1 from '../assets/carousel/section-1.png'
-import section2 from '../assets/carousel/section-2.png'
+import plan1 from '../assets/carousel/plan-1.webp'
+import plan2 from '../assets/carousel/plan-2.webp'
+import plan3 from '../assets/carousel/plan-3.webp'
+import plan4 from '../assets/carousel/plan-4.webp'
+import section1 from '../assets/carousel/section-1.webp'
+import section2 from '../assets/carousel/section-2.webp'
 
 const images = [plan1, plan2, plan3, plan4, section1, section2]
 

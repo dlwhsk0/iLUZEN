@@ -1,4 +1,4 @@
-import intro from '../../assets/intro.jpg'
+import intro from '../../assets/intro.webp'
 import IntroIcon from '../../components/introIcon'
 import icon1 from '../../assets/icons/icon-1.svg'
 import icon2 from '../../assets/icons/icon-2.svg'
@@ -6,11 +6,11 @@ import icon3 from '../../assets/icons/icon-3.svg'
 import icon4 from '../../assets/icons/icon-4.svg'
 import icon5 from '../../assets/icons/icon-5.svg'
 import arrowDown from '../../assets/icons/arrow-down.svg'
-import main4 from '../..//assets/mainInfo/main4.jpg'
-import main3 from '../..//assets/mainInfo/main3.png'
-import main2 from '../..//assets/mainInfo/main2.jpg'
+import main4 from '../../assets/mainInfo/main4.webp'
+import main3 from '../../assets/mainInfo/main3.webp'
+import main2 from '../../assets/mainInfo/main2.webp'
 import Carousel from '../../components/Carousel'
-import main1 from '../../assets/mainInfo/main1.jpg'
+import main1 from '../../assets/mainInfo/main1.webp'
 import { ServiceBox } from '../../components/ServiceBox'
 import { useState } from 'react'
 
@@ -25,7 +25,7 @@ const introIcons = [
 const serviceItems = [
   [
     '주식회사 이루젠',
-    '주식회사이루젠은 가설자재 설계도면을 전문으로 하는 기업으로, 건설 현장의 안전성과 효율성을 극대화하는 솔루션을 제공합니다. 2023년 설립된 이후, 체계적인 설계 프로세스와 구조 검토를 통해 현장에서 실현 가능한 안전한 설계를 제공하며, 업계에서 신뢰받는 파트너로 자리매김하고 있습니다.',
+    '주식회사이루젠은 가설자재 설계도면을 전문으로 하는 기업으로, 건설 현장의 안전성과 효율성을 극대화하는 솔루션을 제공합니다. 2023년 설립된 이후, 체계적인 설계 프로세스와 구조 검토를 통해 현장에서 실현 가능한 안전한 설계를 제공하며, 업계에서 신뢰받는 파트너로 자리매김하고 있습니다.',
   ],
   [
     '핵심 역량',
