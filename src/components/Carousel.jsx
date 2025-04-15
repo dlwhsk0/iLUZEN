@@ -39,6 +39,9 @@ export default function Carousel() {
                 src={src}
                 alt={`Design ${index + 1}`}
                 className='h-full object-contain my-[10px]'
+                loading='lazy'
+                width='400'
+                height='300'
               />
             </div>
           </SwiperSlide>

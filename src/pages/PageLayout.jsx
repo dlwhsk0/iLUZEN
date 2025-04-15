@@ -7,6 +7,9 @@ export default function PageLayout({ children, thumnail }) {
         src={thumnail}
         alt='thumbnail'
         className='w-full h-[400px] object-cover'
+        loading='lazy'
+        width='1280'
+        height='400'
       />
       <main className='pt-[100px] pb-[150px]'>{children}</main>
     </div>

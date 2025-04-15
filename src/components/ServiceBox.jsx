@@ -11,7 +11,14 @@ export function ServiceBox({ src, alt, title, content }) {
       onMouseLeave={() => setIsHovered(false)}
     >
       {/* 이미지 */}
-      <img src={src} alt={alt} className='w-full h-full object-cover' />
+      <img
+        src={src}
+        alt={alt}
+        className='w-full h-full object-cover'
+        loading='lazy'
+        width='600'
+        height='400'
+      />
       {/* 마우스를 올렸을 때만 어두워지는 그라데이션 */}
       {isHovered && (
         <div className='absolute inset-0 bg-gradient-to-b from-transparent to-black transition-all duration-300'></div>
