@@ -1,10 +1,11 @@
-import systemDongbari from '../assets/design/systemdongbari.webp'
-import systemBigye from '../assets/design/systembigye.webp'
-import pipeSupport from '../assets/design/pipesupport.webp'
-import ganggwanBigye from '../assets/design/ganggwanbigye.webp'
+import systemDongbari from '../../assets/design/systemdongbari.webp'
+import systemBigye from '../../assets/design/systembigye.webp'
+import pipeSupport from '../../assets/design/pipesupport.webp'
+import ganggwanBigye from '../../assets/design/ganggwanbigye.webp'
 
-export const contentStrings = {
-  designItems: [
+export const designContent = {
+  title: '설계품목',
+  items: [
     {
       id: 1,
       src: systemDongbari,

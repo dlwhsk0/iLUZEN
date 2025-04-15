@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types'
-import { contentStrings } from '../data/contentStrings'
+import { designContent } from '../data/content/design'
 
 export default function ItemCard({ id }) {
-  const item = contentStrings.design.items.find((item) => item.id === id)
+  const item = designContent.items.find((item) => item.id === id)
 
   if (!item) return null
 
