@@ -24,8 +24,8 @@ export function ServiceBox({ src, alt, title, content }) {
       {/*기존 반투명 검은색 오버레이 (조절 가능)*/}
       <div className='absolute inset-0 bg-black/30'></div>
       {/* 콘텐츠 영역 */}
-      <div className='absolute inset-0 m-[12px] p-[15px] border-white/50 border-[1.5px] rounded-lg flex flex-col justify-end items-start text-white transition-all duration-[800ms] group-hover:justify-center'>
-        <span className='text-[20px] font-bold mb-[5px] transition-all duration-[800ms] group-hover:text-[24px]'>
+      <div className='absolute inset-0 m-[12px] p-[15px] border-white/50 border-[1.5px] rounded-lg flex flex-col justify-end items-start text-white transition-all duration-[800ms]'>
+        <span className='text-[20px] font-bold mb-[10px] transition-all duration-[800ms] transform origin-left will-change-transform group-hover:scale-[1.2]'>
           {title}
         </span>
         {/* 설명은 상태에 따라 렌더링 */}
