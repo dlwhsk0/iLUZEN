@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Main from './pages/main/Main'
 import './App.css'
 import Layout from './Layout'
@@ -12,10 +12,12 @@ import design from './assets/design.webp'
 import support from './assets/support.webp'
 import Design from './pages/design/Design'
 import Support from './pages/support/Support'
+import ScrollToTop from './components/ScrollToTop'
 
 export default function App() {
   return (
-    <Router>
+    <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route
           path='/'
@@ -66,6 +68,6 @@ export default function App() {
           }
         />
       </Routes>
-    </Router>
+    </BrowserRouter>
   )
 }
