@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types'
-import { designContent } from '../data/content/design'
+import config from '../config/config'
 
 export default function ItemCard({ id }) {
-  const item = designContent.items.find((item) => item.id === id)
+  const item = config.design.items.find((item) => item.id === id)
 
   if (!item) return null
 

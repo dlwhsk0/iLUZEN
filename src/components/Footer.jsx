@@ -12,9 +12,9 @@ export default function Footer() {
         />
         <div className='grid grid-cols-2 grid-rows-2 gap-x-5 gap-y-1 text-[12px] font-light text-[#ECECEC] tracking-widest'>
           <span>주식회사 {config.companyName.kr}</span>
-          <span>대표이사 {config.contactInfo.representative}</span>
-          <span>사업자등록번호 {config.contactInfo.businessNumber}</span>
-          <span>이메일 {config.contactInfo.email}</span>
+          <span>대표이사 {config.contact.representative}</span>
+          <span>사업자등록번호 {config.contact.businessNumber}</span>
+          <span>이메일 {config.contact.email}</span>
         </div>
       </div>
     </div>

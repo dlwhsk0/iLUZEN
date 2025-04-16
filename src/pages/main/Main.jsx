@@ -1,23 +1,10 @@
 import intro from '../../assets/intro.webp'
 import IntroIcon from '../../components/IntroIcon'
-import icon1 from '../../assets/icons/icon-1.svg'
-import icon2 from '../../assets/icons/icon-2.svg'
-import icon3 from '../../assets/icons/icon-3.svg'
-import icon4 from '../../assets/icons/icon-4.svg'
-import icon5 from '../../assets/icons/icon-5.svg'
 import arrowDown from '../../assets/icons/arrow-down.svg'
 import Carousel from '../../components/Carousel'
 import { ServiceBox } from '../../components/ServiceBox'
 import { useState } from 'react'
-import { mainContent } from '../../data/content/main'
-
-const iconMap = {
-  icon1,
-  icon2,
-  icon3,
-  icon4,
-  icon5,
-}
+import config from '../../config/config'
 
 export default function Main() {
   const [hovered, setHovered] = useState(null)
@@ -38,17 +25,13 @@ export default function Main() {
               textShadow: '2px 5px 10px rgba(0, 0, 0, 0.49)',
             }}
           >
-            {mainContent.hero.title}
+            {config.main.title}
           </span>
         </div>
         <div className='bg-[#1A1C1E] w-full h-[280px] pt-[80px] flex flex-col items-center justify-between gap-[20px]'>
           <div className='flex items-center justify-center gap-[80px]'>
-            {mainContent.introIcons.map((item, index) => (
-              <IntroIcon
-                key={index}
-                icon={iconMap[item.icon]}
-                text={item.title}
-              />
+            {config.main.intro.map((item, index) => (
+              <IntroIcon key={index} icon={item.icon} text={item.title} />
             ))}
           </div>
           <img
@@ -62,17 +45,17 @@ export default function Main() {
       <div className='w-[1280px] mx-auto'>
         {/* 타이틀 */}
         <div className='text-[30px] font-light mb-[30px]'>
-          {mainContent.services.title}
+          {config.main.services.title}
         </div>
 
         <div className='w-full h-[550px] grid grid-cols-9 gap-3 transition-all duration-300'>
           {/* 왼쪽 큰 박스 */}
           <div className='h-full col-span-5 text-white rounded-lg flex flex-col justify-center items-center shadow-lg overflow-hidden'>
             <ServiceBox
-              src={mainContent.services.items[0].image}
-              alt={mainContent.services.items[0].title}
-              title={mainContent.services.items[0].title}
-              content={mainContent.services.items[0].description}
+              src={config.main.services.items[0].image}
+              alt={config.main.services.items[0].title}
+              title={config.main.services.items[0].title}
+              content={config.main.services.items[0].description}
             />
           </div>
 
@@ -84,10 +67,10 @@ export default function Main() {
               onMouseLeave={() => setHovered(null)}
             >
               <ServiceBox
-                src={mainContent.services.items[1].image}
-                alt={mainContent.services.items[1].title}
-                title={mainContent.services.items[1].title}
-                content={mainContent.services.items[1].description}
+                src={config.main.services.items[1].image}
+                alt={config.main.services.items[1].title}
+                title={config.main.services.items[1].title}
+                content={config.main.services.items[1].description}
               />
             </div>
             <div
@@ -96,10 +79,10 @@ export default function Main() {
               onMouseLeave={() => setHovered(null)}
             >
               <ServiceBox
-                src={mainContent.services.items[3].image}
-                alt={mainContent.services.items[3].title}
-                title={mainContent.services.items[3].title}
-                content={mainContent.services.items[3].description}
+                src={config.main.services.items[3].image}
+                alt={config.main.services.items[3].title}
+                title={config.main.services.items[3].title}
+                content={config.main.services.items[3].description}
               />
             </div>
             <div
@@ -108,10 +91,10 @@ export default function Main() {
               onMouseLeave={() => setHovered(null)}
             >
               <ServiceBox
-                src={mainContent.services.items[2].image}
-                alt={mainContent.services.items[2].title}
-                title={mainContent.services.items[2].title}
-                content={mainContent.services.items[2].description}
+                src={config.main.services.items[2].image}
+                alt={config.main.services.items[2].title}
+                title={config.main.services.items[2].title}
+                content={config.main.services.items[2].description}
               />
             </div>
           </div>
@@ -123,7 +106,7 @@ export default function Main() {
         {/* 타이틀 */}
         <div className='w-[1280px] mb-[30px]'>
           <span className='text-[30px] font-light'>
-            {mainContent.design.title}
+            {config.main.design.title}
           </span>
         </div>
         {/* 캐러셀 */}
