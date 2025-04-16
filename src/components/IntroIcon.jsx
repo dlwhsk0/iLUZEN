@@ -1,4 +1,5 @@
 import { ReactSVG } from 'react-svg'
+import PropTypes from 'prop-types'
 
 export default function IntroIcon({ icon, text }) {
   return (
@@ -13,4 +14,9 @@ export default function IntroIcon({ icon, text }) {
       <span className='text-white/80 text-[13px] tracking-widest'>{text}</span>
     </div>
   )
+}
+
+IntroIcon.propTypes = {
+  icon: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
 }

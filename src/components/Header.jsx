@@ -13,7 +13,7 @@ export default function Header() {
   const location = useLocation() // 현재 경로 가져오기
 
   return (
-    <div className='w-full h-[60px] py-1 flex items-center justify-center fixed top-0 left-0 right-0 z-50 bg-white/40'>
+    <div className='w-full h-[60px] py-1 flex items-center justify-center fixed top-0 left-0 right-0 z-50 bg-white'>
       <div className='w-full max-w-[1280px] flex flex-col sm:flex-row gap-1 items-center justify-center sm:justify-between transition-all duration-[800ms]'>
         <img
           src={logo}
@@ -28,10 +28,10 @@ export default function Header() {
             return (
               <div
                 key={index}
-                className={`cursor-pointer transition-colors ${
+                className={`cursor-pointer ${
                   isActive
-                    ? 'text-[#002970] font-bold'
-                    : 'hover:text-[#002970] hover:font-bold'
+                    ? 'text-[var(--brand-color)] font-bold relative after:content-[""] after:absolute after:w-full after:h-[2.5px] after:bg-[var(--brand-color)] after:bottom-[-6px] after:left-0'
+                    : 'text-gray-600 hover:text-[var(--brand-color)] hover:font-bold relative after:content-[""] after:absolute after:w-0 after:h-[2.5px] after:bg-[var(--brand-color)] after:bottom-[-6px] after:left-0 hover:after:w-full after:transition-all after:duration-500'
                 }`}
                 onClick={() => navigate(`/${path}`)}
               >

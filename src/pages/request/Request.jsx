@@ -77,7 +77,7 @@ export default function RequestForm() {
 
   return (
     <div className='w-full h-full px-6 py-10'>
-      <span className='text-[30px] text-[#002970] font-bold px-1'>
+      <span className={`text-[30px] text-[var(--brand-color)] font-bold px-1`}>
         작업 의뢰
       </span>
       <form
@@ -301,7 +301,7 @@ export default function RequestForm() {
       </form>
       <div className='mt-4 flex gap-2'>
         <button
-          className='px-4 py-1.5 bg-[#002970] text-white rounded cursor-pointer'
+          className={`px-4 py-1.5 bg-[var(--brand-color)] text-white rounded cursor-pointer`}
           type='submit'
           onClick={handleSubmit}
         >
