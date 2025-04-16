@@ -4,7 +4,7 @@ import icon1 from '../assets/icons/icon-1.svg'
 import icon2 from '../assets/icons/icon-2.svg'
 import icon3 from '../assets/icons/icon-3.svg'
 import icon5 from '../assets/icons/icon-5.svg'
-// import icon14 from '../assets/icons/icon1-4.svg'
+import icon14 from '../assets/icons/icon1-4.svg'
 import desginBG from '../assets/designBG.png'
 import main1 from '../assets/mainInfo/main1.webp'
 import main2 from '../assets/mainInfo/main2.webp'
@@ -155,7 +155,7 @@ export const config = {
     items: [
       {
         id: 1,
-        icon: icon1,
+        icon: icon14,
         title: '시스템도면\n일반가설재도면',
         description: '자재종류구별없이\n일반자재도 도능면화가능',
       },
